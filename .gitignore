@@ -1,0 +1,9 @@
+# System Files
+.DS_Store
+.vscode/
+.claude/
+
+# Don't track parent directories
+../**
+../../**
+../../../**
