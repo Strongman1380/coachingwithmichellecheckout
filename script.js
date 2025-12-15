@@ -4,20 +4,16 @@
  * ========================================
  *
  * This script handles:
+ * - Program dropdown selection
+ * - Dynamic program card rendering
  * - Payment option selection highlighting
  * - Dynamic Stripe link assignment based on selected payment plan
  * - Checkout button click handling
- *
- * TO INTEGRATE STRIPE:
- * 1. Update the stripeLinks object below with your actual Stripe payment links
- * 2. Each payment option needs its own unique Stripe link
- * 3. The script will automatically update the checkout button's link when a payment option is selected
  */
 
 // ========================================
 // STRIPE PAYMENT LINKS CONFIGURATION
 // ========================================
-// Actual Stripe payment links from your Stripe account
 const stripeLinks = {
     // Program 1: The Confident Reset
     'reset-full': 'https://book.stripe.com/test_bJecN72pu7LxaFgbmm3oA00',
@@ -32,36 +28,224 @@ const stripeLinks = {
     'vip-full': 'https://book.stripe.com/test_dRmcN7e8cfdZdRsbmm3oA04',
 
     // Program 5: The Empowered Identity Blueprint
-    'blueprint-early': 'https://buy.stripe.com/test_dRm00l4xCc1NdRs3TU3oA0f', // Early PIF $5000
-    'blueprint-full': 'https://buy.stripe.com/test_28E7sN0hme9V9Bc6223oA03', // PIF $5500
-    'blueprint-3': 'https://buy.stripe.com/test_fZu6oJc048PB28K4XY3oA08', // 3 Payments
-    'blueprint-4': 'https://buy.stripe.com/test_bJe28te8ce9V3cO1LM3oA0j', // 4 Payments
-    'blueprint-6': 'https://buy.stripe.com/test_fZu4gBfcg1n9aFg2PQ3oA0i', // 6 Payments
-    'blueprint-6-discount': 'https://buy.stripe.com/test_fZu4gBfcg1n9aFg2PQ3oA0i', // 6 Payments (using same as above - update if different)
+    'blueprint-early': 'https://buy.stripe.com/test_dRm00l4xCc1NdRs3TU3oA0f',
+    'blueprint-full': 'https://buy.stripe.com/test_28E7sN0hme9V9Bc6223oA03',
+    'blueprint-3': 'https://buy.stripe.com/test_fZu6oJc048PB28K4XY3oA08',
+    'blueprint-4': 'https://buy.stripe.com/test_bJe28te8ce9V3cO1LM3oA0j',
+    'blueprint-6': 'https://buy.stripe.com/test_fZu4gBfcg1n9aFg2PQ3oA0i',
 
     // Program 6: The Complete Reinvention Intensive
-    'reinvention-early': 'https://book.stripe.com/test_bJe7sN2puc1N7t4aii3oA02', // Early PIF $7000
-    'reinvention-full': 'https://buy.stripe.com/test_00wbJ3e8cd5RbJkcqq3oA0e', // PIF $7500 (using 4 payments link - update if you have a different one)
-    'reinvention-2': 'https://buy.stripe.com/test_7sYeVf7JO4zl5kW8aa3oA0g', // 2 Payments
-    'reinvention-4': 'https://buy.stripe.com/test_8x2cN70hm6HteVw0HI3oA0h', // 4 Payments
+    'reinvention-early': 'https://book.stripe.com/test_bJe7sN2puc1N7t4aii3oA02',
+    'reinvention-full': 'https://buy.stripe.com/test_00wbJ3e8cd5RbJkcqq3oA0e',
+    'reinvention-2': 'https://buy.stripe.com/test_7sYeVf7JO4zl5kW8aa3oA0g',
+    'reinvention-4': 'https://buy.stripe.com/test_8x2cN70hm6HteVw0HI3oA0h',
 
     // Program 7: The Pinnacle: Complete Life Mastery
-    'pinnacle-full': 'https://buy.stripe.com/test_eVq8wR6FK7Lx4gSduu3oA0d', // Early PIF $14000
-    'pinnacle-2': 'https://buy.stripe.com/test_eVq9AVaW0aXJfZAbmm3oA0c', // 2 Payments
-    'pinnacle-4': 'https://buy.stripe.com/test_9B614pd488PBaFg4XY3oA0b', // 4 Payments
-    'pinnacle-12': 'https://buy.stripe.com/test_3cIeVf6FK5DpaFg4XY3oA0a' // 12 Payments
+    'pinnacle-early': 'https://buy.stripe.com/test_eVq8wR6FK7Lx4gSduu3oA0d',
+    'pinnacle-full': 'https://book.stripe.com/test_dRmeVf5BG8PB3cO0HI3oA01',
+    'pinnacle-2': 'https://buy.stripe.com/test_eVq9AVaW0aXJfZAbmm3oA0c',
+    'pinnacle-4': 'https://buy.stripe.com/test_9B614pd488PBaFg4XY3oA0b',
+    'pinnacle-12': 'https://buy.stripe.com/test_3cIeVf6FK5DpaFg4XY3oA0a'
 };
+
+// ========================================
+// PROGRAM DATA CONFIGURATION
+// ========================================
+const programData = {
+    'confident-reset': {
+        title: 'The Confident Reset',
+        subtitle: 'A 7-Day Reconnection Experience',
+        price: '$97',
+        badge: null,
+        description: 'A focused reset designed for women ready to break free from emotional exhaustion and rediscover their inner confidence. Learn how to silence self-doubt, rebuild daily motivation, and reconnect with your true sense of power. A perfect quick-start for your confidence journey.',
+        buttonText: 'Begin Your Reset',
+        paymentOptions: [
+            { id: 'reset-full', name: 'reset-payment', label: 'Pay in Full', price: '$97', value: '97', checked: true }
+        ]
+    },
+    'rebuild': {
+        title: 'Rebuild: The Confidence Foundation',
+        subtitle: '30-Day Confidence Transformation',
+        price: '$397',
+        badge: null,
+        description: 'A comprehensive 30-day program designed to rebuild your confidence from the ground up. You\'ll uncover limiting beliefs, develop new empowering habits, and create a solid foundation for lasting self-assurance.',
+        buttonText: 'Start Rebuilding',
+        paymentOptions: [
+            { id: 'rebuild-full', name: 'rebuild-payment', label: 'Pay in Full', price: '$397', value: '397', checked: true }
+        ]
+    },
+    'thrive': {
+        title: 'Thrive: Advanced Confidence Mastery',
+        subtitle: '90-Day Deep Transformation',
+        price: '$697',
+        badge: null,
+        description: 'Take your confidence to the next level with this advanced 90-day program. Master emotional resilience, develop unshakeable self-belief, and learn advanced techniques for thriving in all areas of life.',
+        buttonText: 'Start Thriving',
+        paymentOptions: [
+            { id: 'thrive-full', name: 'thrive-payment', label: 'Pay in Full', price: '$697', value: '697', checked: true }
+        ]
+    },
+    'vip': {
+        title: 'Confidence Mastery + VIP Support',
+        subtitle: 'Premium 1-on-1 Coaching Experience',
+        price: '$997',
+        badge: 'VIP',
+        description: 'Experience personalized transformation with dedicated VIP support. This premium program includes everything in Thrive plus exclusive 1-on-1 coaching sessions, priority access, and personalized guidance tailored to your unique journey.',
+        buttonText: 'Claim VIP Access',
+        paymentOptions: [
+            { id: 'vip-full', name: 'vip-payment', label: 'Pay in Full', price: '$997', value: '997', checked: true }
+        ]
+    },
+    'blueprint': {
+        title: 'The Empowered Identity Blueprint',
+        subtitle: 'Redesign Your Life from the Inside Out',
+        price: '$5,000 — $5,500',
+        badge: 'Premium',
+        description: 'A full-spectrum transformation experience that helps you embody your most authentic, confident, and purpose-driven self. Through guided coaching and proven identity-building frameworks, you\'ll create alignment in your goals, emotions, and daily systems.',
+        buttonText: 'Claim Your Blueprint',
+        paymentOptions: [
+            { id: 'blueprint-early', name: 'blueprint-payment', label: 'Early Pay in Full', price: '$5,000', value: '5000', checked: true, savings: 'Save $500' },
+            { id: 'blueprint-full', name: 'blueprint-payment', label: 'Pay in Full', price: '$5,500', value: '5500' },
+            { id: 'blueprint-3', name: 'blueprint-payment', label: '3 Monthly Payments', price: '$1,897/mo', value: '1897' },
+            { id: 'blueprint-4', name: 'blueprint-payment', label: '4 Monthly Payments', price: '$1,496/mo', value: '1496' },
+            { id: 'blueprint-6', name: 'blueprint-payment', label: '6 Monthly Payments', price: '$997/mo', value: '997' }
+        ]
+    },
+    'reinvention': {
+        title: 'The Complete Reinvention Intensive',
+        subtitle: 'Rebuild Your Confidence, Leadership, and Life Systems',
+        price: '$7,000 — $7,500',
+        badge: 'Elite',
+        description: 'This high-level coaching experience blends emotional strategy with structural life redesign. You\'ll develop the systems, habits, and inner frameworks to sustain balance, confidence, and fulfillment long-term. Perfect for women stepping into leadership in life and career.',
+        buttonText: 'Begin Your Reinvention',
+        paymentOptions: [
+            { id: 'reinvention-early', name: 'reinvention-payment', label: 'Early Pay in Full', price: '$7,000', value: '7000', checked: true, savings: 'Save $500' },
+            { id: 'reinvention-full', name: 'reinvention-payment', label: 'Pay in Full', price: '$7,500', value: '7500' },
+            { id: 'reinvention-2', name: 'reinvention-payment', label: '2 Monthly Payments', price: '$3,897/mo', value: '3897' },
+            { id: 'reinvention-4', name: 'reinvention-payment', label: '4 Monthly Payments', price: '$1,997/mo', value: '1997' }
+        ]
+    },
+    'pinnacle': {
+        title: 'The Pinnacle: Complete Life Mastery',
+        subtitle: 'The Ultimate Transformation Experience',
+        price: '$14,000 — $15,000',
+        badge: 'Signature',
+        badgeClass: 'gold',
+        description: 'The ultimate transformation experience for women ready to completely reinvent every aspect of their lives. This comprehensive program combines all elements of our coaching methodology with exclusive VIP access, personalized strategy sessions, and ongoing support for lasting transformation.',
+        buttonText: 'Reach Your Pinnacle',
+        paymentOptions: [
+            { id: 'pinnacle-early', name: 'pinnacle-payment', label: 'Early Pay in Full', price: '$14,000', value: '14000', checked: true, savings: 'Save $1,000' },
+            { id: 'pinnacle-full', name: 'pinnacle-payment', label: 'Pay in Full', price: '$15,000', value: '15000' },
+            { id: 'pinnacle-2', name: 'pinnacle-payment', label: '2 Monthly Payments', price: '$7,750/mo', value: '7750' },
+            { id: 'pinnacle-4', name: 'pinnacle-payment', label: '4 Monthly Payments', price: '$3,997/mo', value: '3997' },
+            { id: 'pinnacle-12', name: 'pinnacle-payment', label: '12 Monthly Payments', price: '$1,397/mo', value: '1397' }
+        ]
+    }
+};
+
+// ========================================
+// PROGRAM DROPDOWN HANDLER
+// ========================================
+function initializeProgramDropdown() {
+    const dropdown = document.getElementById('program-select');
+    const displayArea = document.getElementById('program-display');
+
+    if (!dropdown || !displayArea) return;
+
+    dropdown.addEventListener('change', function() {
+        const selectedProgram = this.value;
+
+        if (!selectedProgram) {
+            // Show placeholder when no program selected
+            displayArea.innerHTML = `
+                <div class="placeholder-message">
+                    <p>Select a program above to view details and checkout options</p>
+                </div>
+            `;
+            return;
+        }
+
+        const program = programData[selectedProgram];
+        if (!program) return;
+
+        // Render the program card
+        renderProgramCard(displayArea, program, selectedProgram);
+
+        // Initialize payment options and checkout buttons for the new card
+        initializePaymentOptions();
+        initializeCheckoutButtons();
+
+        // Scroll the card into view smoothly
+        displayArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+}
+
+// ========================================
+// RENDER PROGRAM CARD
+// ========================================
+function renderProgramCard(container, program, programKey) {
+    const isFeatured = program.badge !== null;
+    const badgeClass = program.badgeClass || '';
+
+    let badgeHTML = '';
+    if (program.badge) {
+        badgeHTML = `<div class="featured-badge ${badgeClass}">${program.badge}</div>`;
+    }
+
+    let paymentOptionsHTML = '';
+    program.paymentOptions.forEach(option => {
+        const savingsBadge = option.savings ? `<span class="savings-badge">${option.savings}</span>` : '';
+        const checkedAttr = option.checked ? 'checked' : '';
+
+        paymentOptionsHTML += `
+            <div class="payment-option" data-payment-id="${option.id}">
+                <input type="radio" id="${option.id}" name="${option.name}" value="${option.value}" ${checkedAttr}>
+                <label for="${option.id}">
+                    <span class="option-label">${option.label}</span>
+                    <span class="option-price">${option.price}</span>
+                    ${savingsBadge}
+                </label>
+            </div>
+        `;
+    });
+
+    // Get the initial stripe link (first checked option or first option)
+    const defaultOption = program.paymentOptions.find(opt => opt.checked) || program.paymentOptions[0];
+    const defaultStripeLink = stripeLinks[defaultOption.id] || '#';
+
+    container.innerHTML = `
+        <div class="program-card ${isFeatured ? 'featured' : ''} ${programKey === 'pinnacle' ? 'pinnacle' : ''}" data-program="${programKey}">
+            ${badgeHTML}
+            <div class="card-header">
+                <h3 class="program-title">${program.title}</h3>
+                <p class="program-subtitle">${program.subtitle}</p>
+                <p class="program-price">${program.price}</p>
+            </div>
+            <p class="program-description">${program.description}</p>
+
+            <div class="payment-options">
+                ${paymentOptionsHTML}
+            </div>
+
+            <button class="checkout-btn" data-stripe-link="${defaultStripeLink}">
+                ${program.buttonText}
+            </button>
+        </div>
+    `;
+
+    // Add animation class
+    const card = container.querySelector('.program-card');
+    card.style.animation = 'fadeIn 0.5s ease-out';
+}
 
 // ========================================
 // PAYMENT OPTION SELECTION HANDLER
 // ========================================
 function initializePaymentOptions() {
-    // Get all payment option radio buttons
     const radioButtons = document.querySelectorAll('.payment-option input[type="radio"]');
 
     radioButtons.forEach(radio => {
         radio.addEventListener('change', function() {
-            // Get the program card this radio button belongs to
             const programCard = this.closest('.program-card');
             const checkoutButton = programCard.querySelector('.checkout-btn');
             const paymentId = this.id;
@@ -70,31 +254,8 @@ function initializePaymentOptions() {
             if (stripeLinks[paymentId]) {
                 checkoutButton.setAttribute('data-stripe-link', stripeLinks[paymentId]);
             }
-
-            // Optional: Update button text based on selection
-            updateButtonText(checkoutButton, this);
         });
     });
-}
-
-// ========================================
-// UPDATE BUTTON TEXT (OPTIONAL)
-// ========================================
-function updateButtonText(button, selectedRadio) {
-    const label = selectedRadio.nextElementSibling;
-    const optionLabel = label.querySelector('.option-label').textContent;
-    const optionPrice = label.querySelector('.option-price').textContent;
-
-    // You can customize the button text based on the selected payment option
-    // For now, we'll keep the original button text
-    // Uncomment below if you want dynamic button text:
-    /*
-    if (optionLabel.includes('Pay in Full')) {
-        button.textContent = `Checkout - ${optionPrice}`;
-    } else {
-        button.textContent = `Start Payment Plan - ${optionPrice}`;
-    }
-    */
 }
 
 // ========================================
@@ -110,8 +271,7 @@ function initializeCheckoutButtons() {
             const stripeLink = this.getAttribute('data-stripe-link');
 
             // Check if Stripe link is configured
-            if (stripeLink.includes('[INSERT STRIPE LINK')) {
-                // Show alert if Stripe link is not yet configured
+            if (!stripeLink || stripeLink === '#' || stripeLink.includes('[INSERT STRIPE LINK')) {
                 alert('⚠️ Stripe payment link not yet configured.\n\nPlease update the stripeLinks object in script.js with your Stripe payment link for this option.');
                 console.error('Stripe link not configured:', stripeLink);
                 return;
@@ -135,159 +295,20 @@ function trackCheckout(button) {
     const selectedRadio = programCard.querySelector('input[type="radio"]:checked');
     const selectedOption = selectedRadio ? selectedRadio.nextElementSibling.querySelector('.option-label').textContent : 'Unknown';
 
-    // Log to console (replace with your analytics service)
     console.log('Checkout initiated:', {
         program: programName,
         paymentOption: selectedOption,
         timestamp: new Date().toISOString()
     });
-
-    // Example: Google Analytics (uncomment and configure if using GA)
-    /*
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'begin_checkout', {
-            'event_category': 'Checkout',
-            'event_label': programName,
-            'value': selectedRadio.value
-        });
-    }
-    */
-
-    // Example: Facebook Pixel (uncomment and configure if using FB Pixel)
-    /*
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'InitiateCheckout', {
-            content_name: programName,
-            value: selectedRadio.value,
-            currency: 'USD'
-        });
-    }
-    */
 }
 
 // ========================================
-// SMOOTH SCROLL TO PROGRAM (OPTIONAL)
-// ========================================
-function initializeSmoothScroll() {
-    // If you add anchor links to specific programs, this enables smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
-
-// ========================================
-// SCROLL ANIMATIONS (OPTIONAL)
-// ========================================
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe program cards for scroll animations
-    document.querySelectorAll('.program-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
-}
-
-// ========================================
-// INITIALIZE ON PAGE LOAD
+// INITIALIZE ON DOM LOAD
 // ========================================
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎯 Checkout page initialized');
-
-    // Initialize all functionality
+    initializeProgramDropdown();
     initializePaymentOptions();
     initializeCheckoutButtons();
-    initializeSmoothScroll();
-    initializeScrollAnimations();
-
-    // Set initial Stripe links for default selected options
-    document.querySelectorAll('.program-card').forEach(card => {
-        const selectedRadio = card.querySelector('input[type="radio"]:checked');
-        const checkoutButton = card.querySelector('.checkout-btn');
-
-        if (selectedRadio && checkoutButton) {
-            const paymentId = selectedRadio.id;
-            if (stripeLinks[paymentId]) {
-                checkoutButton.setAttribute('data-stripe-link', stripeLinks[paymentId]);
-            }
-        }
-    });
-
     console.log('✅ All systems ready');
 });
-
-// ========================================
-// HELPER FUNCTIONS
-// ========================================
-
-/**
- * Format currency for display
- */
-function formatCurrency(amount) {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 2
-    }).format(amount);
-}
-
-/**
- * Validate Stripe link format
- */
-function isValidStripeLink(link) {
-    return link.startsWith('https://buy.stripe.com/') ||
-           link.startsWith('https://checkout.stripe.com/');
-}
-
-/**
- * Show loading state on button
- */
-function showButtonLoading(button) {
-    button.disabled = true;
-    button.textContent = 'Processing...';
-    button.style.opacity = '0.7';
-}
-
-/**
- * Reset button state
- */
-function resetButtonState(button, originalText) {
-    button.disabled = false;
-    button.textContent = originalText;
-    button.style.opacity = '1';
-}
-
-// ========================================
-// EXPORT FOR TESTING (if needed)
-// ========================================
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        stripeLinks,
-        formatCurrency,
-        isValidStripeLink
-    };
-}

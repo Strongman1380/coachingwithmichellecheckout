@@ -25,129 +25,32 @@
         <div class="hero-divider"></div>
     </section>
 
-    <!-- Programs Grid -->
+    <!-- Program Selection Section -->
     <main class="programs-section">
         <div class="container">
-            <div class="programs-grid">
-
-                <!-- Program 1: The Confident Reset -->
-                <div class="program-card" data-program="confident-reset">
-                    <div class="card-header">
-                        <h3 class="program-title">The Confident Reset</h3>
-                        <p class="program-subtitle">A 7-Day Reconnection Experience</p>
-                        <p class="program-price">$97</p>
-                    </div>
-                    <p class="program-description">A focused reset designed for women ready to break free from emotional exhaustion and rediscover their inner confidence. Learn how to silence self-doubt, rebuild daily motivation, and reconnect with your true sense of power. A perfect quick-start for your confidence journey.</p>
-
-                    <div class="payment-options">
-                        <div class="payment-option" data-payment-id="reset-full">
-                            <input type="radio" id="reset-full" name="reset-payment" value="97" checked>
-                            <label for="reset-full">
-                                <span class="option-label">Pay in Full</span>
-                                <span class="option-price">$97</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="checkout-btn" data-stripe-link="[INSERT STRIPE LINK - CONFIDENT RESET $97]">
-                        Begin Your Reset
-                    </button>
+            <!-- Program Dropdown Selector -->
+            <div class="program-selector">
+                <label for="program-select" class="selector-label">Select Your Program</label>
+                <div class="select-wrapper">
+                    <select id="program-select" class="program-dropdown">
+                        <option value="">— Choose a Program —</option>
+                        <option value="confident-reset">The Confident Reset - $97</option>
+                        <option value="rebuild">Rebuild: The Confidence Foundation - $397</option>
+                        <option value="thrive">Thrive: Advanced Confidence Mastery - $697</option>
+                        <option value="vip">Confidence Mastery + VIP Support - $997</option>
+                        <option value="blueprint">The Empowered Identity Blueprint - $5,000 - $5,500</option>
+                        <option value="reinvention">The Complete Reinvention Intensive - $7,000 - $7,500</option>
+                        <option value="pinnacle">The Pinnacle: Complete Life Mastery - $14,000 - $15,000</option>
+                    </select>
+                    <span class="select-arrow">▼</span>
                 </div>
+            </div>
 
-                <!-- Program 5: The Empowered Identity Blueprint -->
-                <div class="program-card featured" data-program="blueprint">
-                    <div class="featured-badge">Premium</div>
-                    <div class="card-header">
-                        <h3 class="program-title">The Empowered Identity Blueprint</h3>
-                        <p class="program-subtitle">Redesign Your Life from the Inside Out</p>
-                        <p class="program-price">$897/mo — $5,500</p>
-                    </div>
-                    <p class="program-description">A full-spectrum transformation experience that helps you embody your most authentic, confident, and purpose-driven self. Through guided coaching and proven identity-building frameworks, you'll create alignment in your goals, emotions, and daily systems.</p>
-
-                    <div class="payment-options">
-                        <div class="payment-option" data-payment-id="blueprint-early">
-                            <input type="radio" id="blueprint-early" name="blueprint-payment" value="5000" checked>
-                            <label for="blueprint-early">
-                                <span class="option-label">Early Pay in Full</span>
-                                <span class="option-price">$5,000</span>
-                                <span class="savings-badge">Save $500</span>
-                            </label>
-                        </div>
-                        <div class="payment-option" data-payment-id="blueprint-full">
-                            <input type="radio" id="blueprint-full" name="blueprint-payment" value="5500">
-                            <label for="blueprint-full">
-                                <span class="option-label">Pay in Full</span>
-                                <span class="option-price">$5,500</span>
-                            </label>
-                        </div>
-                        <div class="payment-option" data-payment-id="blueprint-3">
-                            <input type="radio" id="blueprint-3" name="blueprint-payment" value="1897">
-                            <label for="blueprint-3">
-                                <span class="option-label">3 Monthly Payments</span>
-                                <span class="option-price">$1,897/mo</span>
-                            </label>
-                        </div>
-                        <div class="payment-option" data-payment-id="blueprint-4">
-                            <input type="radio" id="blueprint-4" name="blueprint-payment" value="1496">
-                            <label for="blueprint-4">
-                                <span class="option-label">4 Monthly Payments</span>
-                                <span class="option-price">$1,496/mo</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="checkout-btn" data-stripe-link="[INSERT STRIPE LINK - BLUEPRINT - WILL CHANGE BASED ON SELECTION]">
-                        Claim Your Blueprint
-                    </button>
+            <!-- Dynamic Program Card -->
+            <div id="program-display" class="program-display">
+                <div class="placeholder-message">
+                    <p>Select a program above to view details and checkout options</p>
                 </div>
-
-                <!-- Program 6: The Complete Reinvention Intensive -->
-                <div class="program-card featured" data-program="reinvention">
-                    <div class="featured-badge">Elite</div>
-                    <div class="card-header">
-                        <h3 class="program-title">The Complete Reinvention Intensive</h3>
-                        <p class="program-subtitle">Rebuild Your Confidence, Leadership, and Life Systems</p>
-                        <p class="program-price">$1,997/mo — $7,500</p>
-                    </div>
-                    <p class="program-description">This high-level coaching experience blends emotional strategy with structural life redesign. You'll develop the systems, habits, and inner frameworks to sustain balance, confidence, and fulfillment long-term. Perfect for women stepping into leadership in life and career.</p>
-
-                    <div class="payment-options">
-                        <div class="payment-option" data-payment-id="reinvention-early">
-                            <input type="radio" id="reinvention-early" name="reinvention-payment" value="7000" checked>
-                            <label for="reinvention-early">
-                                <span class="option-label">Early Pay in Full</span>
-                                <span class="option-price">$7,000</span>
-                                <span class="savings-badge">Save $500</span>
-                            </label>
-                        </div>
-                        <div class="payment-option" data-payment-id="reinvention-full">
-                            <input type="radio" id="reinvention-full" name="reinvention-payment" value="7500">
-                            <label for="reinvention-full">
-                                <span class="option-label">Pay in Full</span>
-                                <span class="option-price">$7,500</span>
-                            </label>
-                        </div>
-                        <div class="payment-option" data-payment-id="reinvention-2">
-                            <input type="radio" id="reinvention-2" name="reinvention-payment" value="3897">
-                            <label for="reinvention-2">
-                                <span class="option-label">2 Monthly Payments</span>
-                                <span class="option-price">$3,897/mo</span>
-                            </label>
-                        </div>
-                        <div class="payment-option" data-payment-id="reinvention-4">
-                            <input type="radio" id="reinvention-4" name="reinvention-payment" value="1997">
-                            <label for="reinvention-4">
-                                <span class="option-label">4 Monthly Payments</span>
-                                <span class="option-price">$1,997/mo</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <button class="checkout-btn" data-stripe-link="[INSERT STRIPE LINK - REINVENTION - WILL CHANGE BASED ON SELECTION]">
-                        Begin Your Reinvention
-                    </button>
-                </div>
-
             </div>
         </div>
     </main>
