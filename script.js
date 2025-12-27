@@ -17,6 +17,7 @@
 const stripeLinks = {
     // Program 1: The Confident Reset
     'reset-full': 'https://book.stripe.com/test_bJecN72pu7LxaFgbmm3oA00',
+    'reset-premium': 'https://book.stripe.com/28E5kC9fA99V3cW9QF6AM0h',
 
     // Program 2: Rebuild: The Confidence Foundation
     'rebuild-full': 'https://book.stripe.com/test_4gMcN74xC1n900C8aa3oA06',
@@ -55,12 +56,13 @@ const programData = {
     'confident-reset': {
         title: 'The Confident Reset',
         subtitle: 'A 7-Day Reconnection Experience',
-        price: '$97',
+        price: '$97 or $499',
         badge: null,
-        description: 'A focused reset designed for women ready to break free from emotional exhaustion and rediscover their inner confidence. Learn how to silence self-doubt, rebuild daily motivation, and reconnect with your true sense of power. A perfect quick-start for your confidence journey.',
+        description: 'A focused reset designed for women ready to break free from emotional exhaustion and rediscover their inner confidence. Learn how to silence self-doubt, rebuild daily motivation, and reconnect with your true sense of power. A perfect quick-start for your confidence journey. Add the $499 option to include the program, materials, and two 60-minute coaching sessions.',
         buttonText: 'Begin Your Reset',
         paymentOptions: [
-            { id: 'reset-full', name: 'reset-payment', label: 'Pay in Full', price: '$97', value: '97', checked: true }
+            { id: 'reset-full', name: 'reset-payment', label: 'Pay in Full', price: '$97', value: '97', checked: true },
+            { id: 'reset-premium', name: 'reset-payment', label: 'Pay in Full + Coaching Sessions', price: '$499', value: '499' }
         ]
     },
     'rebuild': {
