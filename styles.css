@@ -564,6 +564,10 @@ body {
         gap: var(--spacing-lg);
     }
 
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
     .hero-content {
         flex-direction: column;
         gap: var(--spacing-lg);
@@ -579,6 +583,16 @@ body {
         font-size: 2rem;
     }
 
+    .cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
     .program-card {
         padding: var(--spacing-lg);
     }
@@ -588,12 +602,42 @@ body {
         font-size: 0.65rem;
         padding: 0.4rem 1rem;
     }
+
+    .program-description {
+        font-size: 0.9rem;
+    }
+
+    .payment-option label {
+        gap: var(--spacing-xs);
+        align-items: flex-start;
+    }
+
+    .option-price {
+        font-size: 1rem;
+    }
+
+    .option-note {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-portrait {
         width: 150px;
         height: 150px;
+    }
+
+    .cta-title {
+        font-size: 1.25rem;
+    }
+
+    .cta-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .program-dropdown {
+        font-size: 1rem;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .payment-option label {
@@ -604,6 +648,16 @@ body {
 
     .option-price {
         margin-left: 0;
+        font-size: 0.95rem;
+    }
+
+    .option-note {
+        font-size: 0.85rem;
+    }
+
+    .checkout-btn {
+        font-size: 0.95rem;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 }
 
