@@ -62,7 +62,14 @@ const programData = {
         buttonText: 'Begin Your Reset',
         paymentOptions: [
             { id: 'reset-full', name: 'reset-payment', label: 'Pay in Full', price: '$97', value: '97', checked: true },
-            { id: 'reset-premium', name: 'reset-payment', label: 'Pay in Full + Coaching Sessions', price: '$499', value: '499' }
+            {
+                id: 'reset-premium',
+                name: 'reset-payment',
+                label: 'Pay in Full + Coaching Sessions',
+                price: '$499',
+                value: '499',
+                description: 'Includes program, materials, and two 60-minute coaching sessions.'
+            }
         ]
     },
     'rebuild': {
@@ -198,6 +205,7 @@ function renderProgramCard(container, program, programKey) {
     program.paymentOptions.forEach(option => {
         const savingsBadge = option.savings ? `<span class="savings-badge">${option.savings}</span>` : '';
         const checkedAttr = option.checked ? 'checked' : '';
+        const description = option.description ? `<span class=\"option-note\">${option.description}</span>` : '';
 
         paymentOptionsHTML += `
             <div class="payment-option" data-payment-id="${option.id}">

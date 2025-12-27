@@ -126,6 +126,65 @@ body {
 }
 
 /* ========================================
+   CTA BAR
+   ======================================== */
+.cta-bar {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(45, 45, 45, 0.9) 100%);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding: var(--spacing-lg) 0;
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.cta-text {
+    flex: 1;
+}
+
+.cta-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    margin-bottom: var(--spacing-xs);
+    letter-spacing: 1px;
+}
+
+.cta-subtitle {
+    color: var(--off-white);
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 100%);
+    color: var(--black);
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(212, 175, 55, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(212, 175, 55, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+/* ========================================
    PROGRAMS SECTION
    ======================================== */
 .programs-section {
@@ -410,6 +469,13 @@ body {
     font-weight: 600;
     color: var(--gold-primary);
     font-size: 1.1rem;
+}
+
+.option-note {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: rgba(254, 254, 254, 0.8);
 }
 
 .savings-badge {
