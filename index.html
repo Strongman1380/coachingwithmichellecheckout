@@ -3,61 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose Your Transformation - Jocelyn Michelle Lemke</title>
+    <title>Jocelyn Lemke | Women's Success Coach</title>
+    <meta name="description" content="Jocelyn Lemke is a Women's Success Coach helping post-divorce women rebuild identity, confidence, and clarity through transformational coaching programs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html"><img src="images/hero-logo2.png" alt="Jocelyn Lemke" class="main-logo-image"></a>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="has-dropdown">
+                    <a href="products.html">The Ecosystem <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="masterclass.html">Free Training: The Masterclass</a>
+                        <a href="program.html">The Program</a>
+                        <a href="vip.html">Sovereign VIP</a>
+                        <a href="intensive.html">Accelerator: Private Intensive</a>
+                        <a href="post-divorce-reset.html">Workshop: Post-Divorce Reset</a>
+                        <a href="confidence-reset.html">Workshop: Confidence Reset</a>
+                    </div>
+                </li>
+                <li><a href="book.html">Book Your Call</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="legal.html">Legal</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-threads"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </header>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero-section" style="background-image: url('images/fine-to-done-hero.png'); height: 90vh;">
+        <div class="hero-overlay" style="background: rgba(0,0,0,0.2);"></div>
         <div class="hero-content">
-            <div class="hero-image">
-                <img src="images/hero-logo.png" alt="Jocelyn Michelle Lemke" class="hero-portrait">
-            </div>
-            <div class="hero-text">
-                <h1 class="hero-title">Choose Your Transformation</h1>
-                <p class="hero-subtitle">Investment in yourself is the foundation of empowerment</p>
+            <div class="hero-glass-card">
+                <p class="hero-label">INTRODUCING THE ASCENSION FRAMEWORK</p>
+                <h1 class="hero-main-title">FROM FINE<br>TO DONE.</h1>
+                <p class="hero-main-subtitle">A four-pillar framework designed to move you from Awareness → Activation → Application → Ascension. It's time to stop feeling 'fine' and start being DONE with survival mode.</p>
+                <div class="hero-actions">
+                    <a href="products.html" class="btn-primary">EXPLORE THE PROGRAMS</a>
+                    <a href="book.html" class="btn-secondary">BOOK A DISCOVERY CALL</a>
+                </div>
             </div>
         </div>
-        <div class="hero-divider"></div>
     </section>
 
-    <!-- Program Selection Section -->
-    <main class="programs-section">
-        <div class="container">
-            <!-- Program Dropdown Selector -->
-            <div class="program-selector">
-                <label for="program-select" class="selector-label">Select Your Program</label>
-                <div class="select-wrapper">
-                    <select id="program-select" class="program-dropdown">
-                        <option value="">— Choose a Program —</option>
-                        <option value="confident-reset">The Confident Reset - $97</option>
-                        <option value="blueprint">The Empowered Identity Blueprint - $5,000 - $5,500</option>
-                        <option value="reinvention">The Complete Reinvention Intensive - $7,000 - $7,500</option>
-                    </select>
-                    <span class="select-arrow">▼</span>
-                </div>
-            </div>
+    <!-- Support Bar -->
+    <div class="support-bar">
+        <div class="support-item">
+            <i class="fa-solid fa-1"></i>
+            <span>Awareness</span>
+        </div>
+        <div class="support-item">
+            <i class="fa-solid fa-2"></i>
+            <span>Activation</span>
+        </div>
+        <div class="support-item">
+            <i class="fa-solid fa-3"></i>
+            <span>Application</span>
+        </div>
+        <div class="support-item">
+            <i class="fa-solid fa-4"></i>
+            <span>Ascension</span>
+        </div>
+    </div>
 
-            <!-- Dynamic Program Card -->
-            <div id="program-display" class="program-display">
-                <div class="placeholder-message">
-                    <p>Select a program above to view details and checkout options</p>
+    <!-- Ecosystem Overview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="ecosystem-card">
+                <div>
+                    <span class="eyebrow">The Framework</span>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 25px;">The Ascension Framework.</h2>
+                    <p class="body-text" style="font-size: 1.15rem; margin-bottom: 40px;">Every program Jocelyn runs is built on the same four-pillar framework. Each pillar builds on the last, moving you from stuck and surviving to grounded, sovereign, and fully expressed.</p>
+
+                    <div class="ecosystem-steps">
+                        <div class="ecosystem-step">
+                            <span class="step-num">1</span>
+                            <div class="step-content">
+                                <h4>Awareness</h4>
+                                <p>Decode the identity patterns, beliefs, and survival loops keeping you stuck in 'fine.'</p>
+                            </div>
+                        </div>
+                        <div class="ecosystem-step">
+                            <span class="step-num clay">2</span>
+                            <div class="step-content">
+                                <h4>Activation</h4>
+                                <p>Activate the identity shift. Regulate your nervous system so change actually feels safe.</p>
+                            </div>
+                        </div>
+                        <div class="ecosystem-step">
+                            <span class="step-num">3</span>
+                            <div class="step-content">
+                                <h4>Application</h4>
+                                <p>Apply the framework through structured, accountable program work that produces real results.</p>
+                            </div>
+                        </div>
+                        <div class="ecosystem-step">
+                            <span class="step-num clay">4</span>
+                            <div class="step-content">
+                                <h4>Ascension</h4>
+                                <p>Expand into sovereign leadership — and a life built entirely on your terms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn-primary">Explore All Programs</a>
+                </div>
+                <div class="ecosystem-image-wrap">
+                    <img src="images/core-program.png" alt="Core Transformation" class="ecosystem-img">
+                    <div class="floating-quote">
+                         <p>"Rewrite your future by changing the person experiencing it. This is your reclamation."</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Philosophy Preview -->
+    <section class="philosophy-section">
+        <div class="ecosystem-container" style="text-align: center;">
+            <h2 class="section-title" style="margin-bottom: 20px;">Beyond 'Fine'</h2>
+            <p class="body-text" style="max-width: 800px; margin: 0 auto 60px;">Most women settle for being "fine." But "fine" is just survival with a smile. The Ascension Framework moves you into actual, measurable identity transformation — from the inside out.</p>
+
+            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="feature-card">
+                    <i class="fa-solid fa-eye feature-icon"></i>
+                    <h3>Awareness</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">Understand the internal circuitry keeping you stuck. See the patterns clearly for the first time.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-bolt feature-icon"></i>
+                    <h3>Activation</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">Activate the identity shift. Regulate your nervous system so change feels safe — not threatening.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-gears feature-icon"></i>
+                    <h3>Application</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">Apply the work through structured programs built to produce real, lasting results — not temporary motivation.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-crown feature-icon"></i>
+                    <h3>Ascension</h3>
+                    <p style="color: var(--text-light); line-height: 1.7;">Expand into sovereign leadership. Build a life, identity, and presence that is fully and unapologetically yours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Tiers -->
+    <section class="section-padding" style="background: var(--bg-main);">
+        <div class="container">
+            <div style="text-align:center; margin-bottom: 60px;">
+                <span class="eyebrow" style="display:block; text-align:center;">Choose Your Path</span>
+                <h2 class="section-title" style="display: block;">The Programs</h2>
+            </div>
+            <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+
+                <!-- Masterclass -->
+                <div class="product-card">
+                    <div class="product-card-top clay">
+                        <p class="product-label">FREE LIVE TRAINING</p>
+                        <h3>The Masterclass</h3>
+                    </div>
+                    <div class="product-card-body">
+                        <p>Join Jocelyn for a live training where she walks you through The Ascension Framework and shows you exactly how it applies to your life.</p>
+                        <div class="product-card-actions">
+                            <a href="masterclass.html" class="btn-enroll">Learn More</a>
+                            <a href="book.html" class="btn-learn">Book Your Discovery Call</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Program -->
+                <div class="product-card featured" style="border: 2px solid var(--primary);">
+                    <div style="background: var(--primary); color: #fff; text-align: center; padding: 5px; font-size: 0.70rem; font-weight: 700;">THE ASCENSION FRAMEWORK IN ACTION</div>
+                    <div class="product-card-top">
+                        <p class="product-label">12-WEEK INTENSIVE</p>
+                        <h3>The Program</h3>
+                    </div>
+                    <div class="product-card-body">
+                        <p>12 weeks of structured identity rewiring and nervous system work. This is where all four pillars of the Ascension Framework come alive.</p>
+                        <div class="product-card-actions">
+                            <a href="program.html" class="btn-enroll">View Program</a>
+                            <a href="book.html" class="btn-learn">Book Your Discovery Call</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sovereign VIP -->
+                <div class="product-card">
+                    <div class="product-card-top">
+                        <p class="product-label">PRIVATE MENTORSHIP</p>
+                        <h3>Sovereign VIP</h3>
+                    </div>
+                    <div class="product-card-body">
+                        <p>Elite 1:1 mentorship for the woman ready to ascend into sovereign leadership and a life built entirely on her own terms.</p>
+                        <div class="product-card-actions">
+                            <a href="vip.html" class="btn-enroll">Explore VIP</a>
+                            <a href="book.html" class="btn-learn">Book Your Discovery Call</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Meet Jocelyn -->
+    <section class="section-padding" style="background: var(--surface);">
+        <div class="container">
+            <div class="bio-section" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: center;">
+                <div class="bio-photo-wrap">
+                    <img src="images/eb2ff8_dbc59ce845db421fa8bd4d55761d2450~mv2.avif" alt="Jocelyn Lemke" class="bio-photo">
+                </div>
+                <div class="bio-text">
+                    <span class="eyebrow">Meet Your Guide</span>
+                    <h2>Jocelyn Lemke</h2>
+                    <p>I help women who have been broken open by life — divorce, career transitions, identity loss — find the grounded, sovereign version of themselves that was always waiting to rise.</p>
+                    <a href="about.html" class="btn-primary">Learn More About My Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <span class="eyebrow" style="color: rgba(255,255,255,0.55);">Stay Connected</span>
+            <h2 class="newsletter-title">Stay Grounded &amp; Inspired</h2>
+            <p class="newsletter-desc">Join women who are rebuilding with intention. Receive coaching insights, resources, and encouragement — straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="Your email address">
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 Coaching with Michelle. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-left">
+                    <img src="images/eb2ff8_dbc59ce845db421fa8bd4d55761d2450~mv2.avif" alt="Jocelyn Lemke" class="footer-profile-img">
+                    <div class="footer-contact">
+                        <h3 class="footer-subtitle" style="margin-bottom: 10px;">Coaching With Michelle</h3>
+                        <p>Email: <a href="mailto:Jocelyn@coachingwithmichelle.org">Jocelyn@coachingwithmichelle.org</a></p>
+                        <p class="footer-legal"><a href="legal.html">Disclaimer / Privacy Policy / Terms of Use</a></p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-subtitle">Supportive Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">The Ecosystem</a></li>
+                        <li><a href="book.html">Book Your Call</a></li>
+                        <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-right">
+                    <img src="images/footer-banner.png" alt="Jocelyn Lemke" class="footer-banner-image">
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <button class="chat-btn">
+        <i class="fa-solid fa-comment"></i> Let's Connect
+    </button>
+
+    <script src="scripts/main.js?v=5"></script>
 </body>
 </html>

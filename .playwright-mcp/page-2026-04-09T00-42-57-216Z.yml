@@ -1,0 +1,20 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - img "Jocelyn Michelle Lemke" [ref=e5]
+    - generic [ref=e6]:
+      - heading "Choose Your Transformation" [level=1] [ref=e7]
+      - paragraph [ref=e8]: Investment in yourself is the foundation of empowerment
+  - main [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]:
+        - text: Select Your Program
+        - generic [ref=e12]:
+          - combobox "Select Your Program" [ref=e13]:
+            - option "— Choose a Program —" [selected]
+            - option "The Confident Reset - $97"
+            - option "The Empowered Identity Blueprint - $5,000 - $5,500"
+            - option "The Complete Reinvention Intensive - $7,000 - $7,500"
+          - text: ▼
+      - paragraph [ref=e16]: Select a program above to view details and checkout options
+  - contentinfo [ref=e17]:
+    - paragraph [ref=e19]: © 2025 Coaching with Michelle. All rights reserved.

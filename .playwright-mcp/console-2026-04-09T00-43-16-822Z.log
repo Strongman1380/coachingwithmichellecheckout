@@ -1,0 +1,8 @@
+[     145ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://coaching-with-michelle.web.app/script.js:0
+[     400ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://coaching-with-michelle.web.app/favicon.ico:0
+[   23513ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://coaching-with-michelle.web.app/script.js:0
+[   33125ms] [LOG] 🎯 Checkout page initialized @ https://coaching-with-michelle.web.app/checkout-script.js:186
+[   33128ms] ReferenceError: stripeLinks is not defined
+    at https://coaching-with-michelle.web.app/checkout-script.js:202:13
+    at NodeList.forEach (<anonymous>)
+    at HTMLDocument.<anonymous> (https://coaching-with-michelle.web.app/checkout-script.js:196:48)

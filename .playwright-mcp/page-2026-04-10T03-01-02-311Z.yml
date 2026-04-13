@@ -1,0 +1,167 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Jocelyn Lemke" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - img "Jocelyn Lemke" [ref=e5]
+    - navigation [ref=e6]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "The Ecosystem " [ref=e13] [cursor=pointer]:
+            - /url: products.html
+            - text: The Ecosystem
+            - generic [ref=e14]: 
+        - listitem [ref=e15]:
+          - link "Book Your Call" [ref=e16] [cursor=pointer]:
+            - /url: book.html
+    - generic [ref=e17]:
+      - link [ref=e18] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e20]: 
+      - link "" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+  - generic [ref=e24]:
+    - paragraph [ref=e25]: "LEVEL 2: TRANSFORMATION"
+    - heading "The Program." [level=1] [ref=e26]
+    - paragraph [ref=e27]: A 12-week comprehensive intensive designed for women ready to genuinely shift how they operate. This is where the actual identity rewiring happens.
+    - link "Choose Your Tier" [ref=e28] [cursor=pointer]:
+      - /url: "#pricing"
+  - generic [ref=e31]:
+    - heading "Rewire. Rebuild. Reclaim." [level=2] [ref=e32]
+    - paragraph [ref=e33]: "You've spent enough time understanding the patterns. Now it's time to change them. 'From Fine to Done: The Program' is a structured framework that combines neuroscience, nervous system regulation, and identity architecture to move you into a new way of being."
+  - generic [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]: 
+      - heading "Rewire Identity" [level=4] [ref=e39]
+      - paragraph [ref=e40]: Shift the internal narratives that keep you playing small.
+    - generic [ref=e41]:
+      - generic [ref=e42]: 
+      - heading "Release Patterns" [level=4] [ref=e43]
+      - paragraph [ref=e44]: Unlock the stuck emotional energy and nervous system loops.
+    - generic [ref=e45]:
+      - generic [ref=e46]: 
+      - heading "Build Sustainability" [level=4] [ref=e47]
+      - paragraph [ref=e48]: Create new ways of being that stick, no matter the season.
+    - generic [ref=e49]:
+      - generic [ref=e50]: 
+      - heading "Accountability" [level=4] [ref=e51]
+      - paragraph [ref=e52]: Harness the power of community to anchor your transformation.
+  - generic [ref=e53]:
+    - heading "Program Investment" [level=2] [ref=e54]
+    - paragraph [ref=e55]: Choose the level of support that fits your journey.
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - heading "Self-Paced" [level=3] [ref=e58]
+        - paragraph [ref=e59]: For the self-motivated seeker.
+        - generic [ref=e60]: $997
+        - list [ref=e61]:
+          - listitem [ref=e62]:
+            - generic [ref=e63]: 
+            - text: Full 12-Week Curriculum
+          - listitem [ref=e64]:
+            - generic [ref=e65]: 
+            - text: Identity Mapping Workbooks
+          - listitem [ref=e66]:
+            - generic [ref=e67]: 
+            - text: Complete Audio Library
+          - listitem [ref=e68]:
+            - generic [ref=e69]: 
+            - text: Community Forum Access
+          - listitem [ref=e70]:
+            - generic [ref=e71]: 
+            - text: No Live Coaching Calls
+        - link "Enroll Now" [ref=e72] [cursor=pointer]:
+          - /url: checkout.html?program=core&tier=self
+      - generic [ref=e73]:
+        - generic [ref=e74]: RECOMMENDED EXPERIENCE
+        - heading "Supported" [level=3] [ref=e75]
+        - paragraph [ref=e76]: Transformation with high accountability.
+        - generic [ref=e77]: $2,000
+        - paragraph [ref=e78]: (Or 3 payments of $697)
+        - list [ref=e79]:
+          - listitem [ref=e80]:
+            - generic [ref=e81]: 
+            - text: Everything in Self-Paced
+          - listitem [ref=e82]:
+            - generic [ref=e83]: 
+            - strong [ref=e84]: Weekly Group Coaching Calls
+          - listitem [ref=e85]:
+            - generic [ref=e86]: 
+            - text: Private Mastermind Community
+          - listitem [ref=e87]:
+            - generic [ref=e88]: 
+            - strong [ref=e89]: "Bonus:"
+            - text: 1 Private Pattern Audit
+          - listitem [ref=e90]:
+            - generic [ref=e91]: 
+            - text: Implementation Intensive Option
+        - link "Join the Cohort" [ref=e92] [cursor=pointer]:
+          - /url: checkout.html?program=core&tier=supported
+    - generic [ref=e93]:
+      - heading "Fast-Action Bundle" [level=4] [ref=e94]
+      - paragraph [ref=e95]:
+        - text: Enroll in the Supported tier today and receive a
+        - strong [ref=e96]: 30-minute Personal Pattern Audit
+        - text: to jumpstart your 12-week journey.
+      - paragraph [ref=e97]:
+        - text: Need immediate results?
+        - link "Add the Implementation Intensive for $297" [ref=e98] [cursor=pointer]:
+          - /url: checkout.html?program=intensive
+  - generic [ref=e100]:
+    - heading "The \"What Ifs\"" [level=2] [ref=e101]
+    - generic [ref=e102]:
+      - heading "\"What if I've tried coaching before and it didn't stick?\"" [level=4] [ref=e103]
+      - paragraph [ref=e104]: Most coaching works on the performance level—changing what you do. We work on the identity level—changing who you are. When the core changes, the behavior follows effortlessly.
+    - generic [ref=e105]:
+      - heading "\"What if I'm not ready for a 12-week commitment?\"" [level=4] [ref=e106]
+      - paragraph [ref=e107]:
+        - text: Commitment is the first step of the rewiring. If 12 weeks feels heavy, start with our
+        - link "Level 1 Masterclass" [ref=e108] [cursor=pointer]:
+          - /url: masterclass.html
+        - text: . But if you're truly 'DONE' with where you are, 12 weeks is the minimum required for lasting change.
+    - generic [ref=e109]:
+      - heading "\"What if I can't make the live calls?\"" [level=4] [ref=e110]
+      - paragraph [ref=e111]: All calls are recorded and uploaded to your portal within 24 hours. You can also submit questions in advance for Jocelyn to answer during the session.
+  - contentinfo [ref=e112]:
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - img "Jocelyn Lemke" [ref=e116]
+        - generic [ref=e117]:
+          - heading "Coaching With Michelle" [level=3] [ref=e118]
+          - paragraph [ref=e119]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e120] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e121]:
+            - link "Disclaimer / Privacy Policy / Terms and Conditions" [ref=e122] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e123]:
+        - heading "Supportive Links" [level=4] [ref=e124]
+        - list [ref=e125]:
+          - listitem [ref=e126]:
+            - link "Home" [ref=e127] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e128]:
+            - link "About" [ref=e129] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e130]:
+            - link "The Ecosystem" [ref=e131] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e132]:
+            - link "Book Your Call" [ref=e133] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e134]:
+            - link "Checkout" [ref=e135] [cursor=pointer]:
+              - /url: checkout.html
+      - img "Jocelyn Lemke" [ref=e137]
+  - button " Let's Connect" [ref=e138] [cursor=pointer]:
+    - generic [ref=e139]: 
+    - text: Let's Connect

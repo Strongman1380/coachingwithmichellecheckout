@@ -1,0 +1,109 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - img "Jocelyn Lemke" [ref=e4]
+    - navigation [ref=e5]:
+      - list [ref=e6]:
+        - listitem [ref=e7]:
+          - link "Home" [ref=e8] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e9]:
+          - link "About" [ref=e10] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e11]:
+          - link "Products" [ref=e12] [cursor=pointer]:
+            - /url: products.html
+        - listitem [ref=e13]:
+          - link "Book Your Call" [ref=e14] [cursor=pointer]:
+            - /url: book.html
+        - listitem [ref=e15]:
+          - link "Checkout" [ref=e16] [cursor=pointer]:
+            - /url: checkout.html
+    - generic [ref=e17]:
+      - link [ref=e18] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e20]: 
+      - link "" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+  - generic [ref=e25]:
+    - heading "You Were Not Broken. You Were Broken Open." [level=1] [ref=e26]:
+      - text: You Were Not Broken.
+      - text: You Were Broken Open.
+    - paragraph [ref=e27]: Transformational coaching for women ready to reclaim their identity, confidence, and life after divorce.
+    - link "Book a Free Discovery Call" [ref=e28] [cursor=pointer]:
+      - /url: book.html
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - generic [ref=e31]: 
+      - generic [ref=e32]: Identity Recalibration
+    - generic [ref=e33]:
+      - generic [ref=e34]: 
+      - generic [ref=e35]: Grounded Confidence
+    - generic [ref=e36]:
+      - generic [ref=e37]: 
+      - generic [ref=e38]: Life Redesign & Clarity
+    - generic [ref=e39]:
+      - generic [ref=e40]: 
+      - generic [ref=e41]: Sovereign Living
+  - generic [ref=e42]:
+    - heading "The Grounded Approach" [level=2] [ref=e44]
+    - generic [ref=e45]:
+      - paragraph [ref=e48]: "\"Real transformation isn't performance. It's patient, honest inner work.\""
+      - generic [ref=e49]:
+        - heading "From Surviving to Sovereignly Leading" [level=3] [ref=e50]
+        - paragraph [ref=e51]: Jocelyn Lemke knows what it means to lose yourself — and what it takes to come back stronger, clearer, and more aligned than before. Her coaching is not about rushing the healing. It's about building a foundation so solid that nothing external can shake it again.
+        - paragraph [ref=e52]: Whether you're newly separated or years post-divorce and still not feeling like yourself, Jocelyn meets you exactly where you are — and walks with you toward who you're becoming.
+        - link "Meet Jocelyn" [ref=e53] [cursor=pointer]:
+          - /url: about.html
+      - paragraph [ref=e56]: "\"You don't have to be hard to be powerful. Strength and softness coexist.\""
+  - generic [ref=e58]:
+    - heading "Choose Your Path Forward" [level=2] [ref=e59]
+    - paragraph [ref=e60]: From a powerful 7-day reset to full-spectrum private mentorship — find the program that matches your season and your readiness for change.
+    - generic [ref=e61]:
+      - link "Explore Programs" [ref=e62] [cursor=pointer]:
+        - /url: products.html
+      - link "Go to Checkout" [ref=e63] [cursor=pointer]:
+        - /url: checkout.html
+  - generic [ref=e65]:
+    - heading "Stay Grounded & Inspired" [level=2] [ref=e66]
+    - paragraph [ref=e67]: Join women who are rebuilding with intention. Receive coaching insights, resources, and encouragement — straight to your inbox.
+    - generic [ref=e68]:
+      - textbox "Your email address" [ref=e69]
+      - button "Subscribe" [ref=e70] [cursor=pointer]
+  - contentinfo [ref=e71]:
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - img "Jocelyn Lemke" [ref=e74]
+        - generic [ref=e75]:
+          - heading "Coaching With Michelle" [level=2] [ref=e76]
+          - paragraph [ref=e77]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e78] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e79]:
+            - link "Disclaimer / Privacy Policy / Terms and Conditions" [ref=e80] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e81]:
+        - heading "Supportive Links" [level=4] [ref=e82]
+        - list [ref=e83]:
+          - listitem [ref=e84]:
+            - link "Home" [ref=e85] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e86]:
+            - link "About" [ref=e87] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e88]:
+            - link "Products" [ref=e89] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e90]:
+            - link "Book Your Call" [ref=e91] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e92]:
+            - link "Checkout" [ref=e93] [cursor=pointer]:
+              - /url: checkout.html
+      - img "Jocelyn Lemke" [ref=e95]
+  - button " Let's Connect" [ref=e96] [cursor=pointer]:
+    - generic [ref=e97]: 
+    - text: Let's Connect

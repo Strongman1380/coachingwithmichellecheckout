@@ -1,0 +1,117 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Jocelyn Lemke" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - img "Jocelyn Lemke" [ref=e5]
+    - navigation [ref=e6]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "The Ecosystem " [ref=e13] [cursor=pointer]:
+            - /url: products.html
+            - text: The Ecosystem
+            - generic [ref=e14]: 
+        - listitem [ref=e15]:
+          - link "Book Your Call" [ref=e16] [cursor=pointer]:
+            - /url: book.html
+    - generic [ref=e17]:
+      - link [ref=e18] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e20]: 
+      - link "" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+  - generic [ref=e24]:
+    - paragraph [ref=e25]: "LEVEL 3: EXPANSION"
+    - heading "Sovereign VIP." [level=1] [ref=e26]
+    - paragraph [ref=e27]: "\"Become the woman who leads, makes decisions from her truth, and expands on her own terms.\""
+    - generic [ref=e28]:
+      - heading "Invitation Only" [level=3] [ref=e29]
+      - paragraph [ref=e30]: The Sovereign VIP Experience is reserved for 3-5 women per year who are ready for deep proximity, rapid expansion, and legacy-level leadership. This is not just coaching; it's a recalibration of your entire world.
+      - link "Apply for Private Mentorship" [ref=e31] [cursor=pointer]:
+        - /url: book.html
+  - generic [ref=e34]:
+    - generic [ref=e35]:
+      - heading "Beyond the Blueprint." [level=2] [ref=e36]
+      - paragraph [ref=e37]: While our other programs focus on the 'how,' the VIP experience focuses on the 'WHO.' We work at the edges of your capacity, expanding your identity to match the vision of the life you are actively building.
+      - generic [ref=e38]:
+        - heading "Mid-Tier VIP (3-Month)" [level=4] [ref=e39]
+        - paragraph [ref=e40]: $3,000 – $5,000
+        - paragraph [ref=e41]: Focused expansion for specific life/business transitions.
+      - generic [ref=e42]:
+        - heading "High-Tier VIP (6-Month)" [level=4] [ref=e43]
+        - paragraph [ref=e44]: $6,000 – $10,000
+        - paragraph [ref=e45]: Full-spectrum sovereign leadership and identity architecture.
+    - generic [ref=e47]:
+      - heading "The High-Touch Container" [level=3] [ref=e48]
+      - list [ref=e49]:
+        - listitem [ref=e50]:
+          - generic [ref=e51]: 
+          - text: Private coaching access (weekly)
+        - listitem [ref=e52]:
+          - generic [ref=e53]: 
+          - text: Real-time support channel (Voxer/Slack)
+        - listitem [ref=e54]:
+          - generic [ref=e55]: 
+          - text: Identity expansion & Visibility strategy
+        - listitem [ref=e56]:
+          - generic [ref=e57]: 
+          - text: High-level decision coaching
+        - listitem [ref=e58]:
+          - generic [ref=e59]: 
+          - text: Direct, priority access to Michelle
+  - generic [ref=e62]:
+    - paragraph [ref=e63]: IMMEDIATE UPSELL
+    - heading "Private 1:1 Intensive" [level=2] [ref=e64]
+    - paragraph [ref=e65]: For the woman who needs a quantum leap in a single day. A full-day or half-day deep dive into identity evolution, money blocks, and visibility strategy.
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - heading "Half-Day" [level=5] [ref=e68]
+        - paragraph [ref=e69]: $1,500
+      - generic [ref=e70]:
+        - heading "Full-Day" [level=5] [ref=e71]
+        - paragraph [ref=e72]: $3,000
+    - link "Book Your Intensive" [ref=e73] [cursor=pointer]:
+      - /url: book.html
+  - contentinfo [ref=e74]:
+    - generic [ref=e76]:
+      - generic [ref=e77]:
+        - img "Jocelyn Lemke" [ref=e78]
+        - generic [ref=e79]:
+          - heading "Coaching With Michelle" [level=2] [ref=e80]
+          - paragraph [ref=e81]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e82] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e83]:
+            - link "Disclaimer / Privacy Policy / Terms and Conditions" [ref=e84] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e85]:
+        - heading "Supportive Links" [level=4] [ref=e86]
+        - list [ref=e87]:
+          - listitem [ref=e88]:
+            - link "Home" [ref=e89] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e90]:
+            - link "About" [ref=e91] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e92]:
+            - link "Products" [ref=e93] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e94]:
+            - link "Book Your Call" [ref=e95] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e96]:
+            - link "Checkout" [ref=e97] [cursor=pointer]:
+              - /url: checkout.html
+      - img "Jocelyn Lemke" [ref=e99]
+  - button " Let's Connect" [ref=e100] [cursor=pointer]:
+    - generic [ref=e101]: 
+    - text: Let's Connect

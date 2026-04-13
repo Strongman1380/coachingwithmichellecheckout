@@ -1,0 +1,214 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Jocelyn Lemke" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - img "Jocelyn Lemke" [ref=e5]
+    - navigation [ref=e6]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "The Ecosystem " [ref=e13] [cursor=pointer]:
+            - /url: products.html
+            - text: The Ecosystem
+            - generic [ref=e14]: 
+        - listitem [ref=e15]:
+          - link "Book Your Call" [ref=e16] [cursor=pointer]:
+            - /url: book.html
+    - generic [ref=e17]:
+      - link [ref=e18] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e20]: 
+      - link "" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+  - generic [ref=e23]:
+    - heading "Coaching Programs" [level=1] [ref=e24]
+    - paragraph [ref=e25]: Every woman's path is different. These programs are designed to meet you exactly where you are and carry you toward who you're becoming.
+  - generic [ref=e27]:
+    - generic [ref=e28]:
+      - heading "The 'From Fine to Done' Ecosystem" [level=2] [ref=e29]
+      - paragraph [ref=e30]: "Our ascension model is designed to meet you where you are and guide you through the three phases of reclamation: Awareness, Transformation, and Expansion."
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: "LEVEL 1: Awareness"
+          - heading "The Masterclass" [level=3] [ref=e35]
+          - paragraph [ref=e36]: "From Fine to Done: The Foundation"
+        - generic [ref=e37]:
+          - paragraph [ref=e38]: "$497 (Beta: $247)"
+          - paragraph [ref=e39]: A foundational 4–6 week digital class teaching the core framework behind identity patterns, nervous system activation, and why 'fine' feels like survival.
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - generic [ref=e42]: 
+              - text: Video lessons & workbooks
+            - listitem [ref=e43]:
+              - generic [ref=e44]: 
+              - text: Identity mapping exercises
+            - listitem [ref=e45]:
+              - generic [ref=e46]: 
+              - text: Guided audio practices
+            - listitem [ref=e47]:
+              - generic [ref=e48]: 
+              - text: 30-day integration support
+          - generic [ref=e49]:
+            - link "View Details" [ref=e50] [cursor=pointer]:
+              - /url: masterclass.html
+            - link "Enroll - $247" [ref=e51] [cursor=pointer]:
+              - /url: checkout.html?program=masterclass
+      - generic [ref=e52]:
+        - generic [ref=e53]: TRANSFORMATION INTENSIVE
+        - generic [ref=e54]:
+          - paragraph [ref=e55]: "LEVEL 2: Transformation"
+          - heading "The Program" [level=3] [ref=e56]
+          - paragraph [ref=e57]: 12 Weeks of Identity & Pattern Rewiring
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - paragraph [ref=e60]: "Supported (Group Coaching): $1,500 - $2,000"
+            - paragraph [ref=e61]: "Self-Paced: $997"
+          - paragraph [ref=e62]: A comprehensive intensive designed for women ready to genuinely shift how they operate. Structured curriculum, weekly accountability, and real-time coaching.
+          - list [ref=e63]:
+            - listitem [ref=e64]:
+              - generic [ref=e65]: 
+              - text: 12-week comprehensive rewiring
+            - listitem [ref=e66]:
+              - generic [ref=e67]: 
+              - text: Weekly group coaching calls
+            - listitem [ref=e68]:
+              - generic [ref=e69]: 
+              - strong [ref=e70]: "Bonus:"
+              - text: 1 Private Coaching Session
+            - listitem [ref=e71]:
+              - generic [ref=e72]: 
+              - text: Real-time pattern audits
+          - generic [ref=e73]:
+            - link "View Details" [ref=e74] [cursor=pointer]:
+              - /url: program.html
+            - link "See Enrollment Tiers" [ref=e75] [cursor=pointer]:
+              - /url: checkout.html?program=core
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - paragraph [ref=e78]: "LEVEL 3: Expansion"
+          - heading "Sovereign VIP" [level=3] [ref=e79]
+          - paragraph [ref=e80]: Elite Private Identity Mentorship
+        - generic [ref=e81]:
+          - paragraph [ref=e82]: From $3,000
+          - paragraph [ref=e83]: Private, invitation-only access for identity expansion, high-level decision coaching, and visibility building. Absolute proximity to transformation.
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - generic [ref=e86]: 
+              - text: Weekly private coaching access
+            - listitem [ref=e87]:
+              - generic [ref=e88]: 
+              - text: Real-time support (Voxer/Slack)
+            - listitem [ref=e89]:
+              - generic [ref=e90]: 
+              - text: Money & visibility expansion
+            - listitem [ref=e91]:
+              - generic [ref=e92]: 
+              - text: Custom strategy intensives
+          - generic [ref=e93]:
+            - link "Explore VIP" [ref=e94] [cursor=pointer]:
+              - /url: vip.html
+            - link "Apply Now" [ref=e95] [cursor=pointer]:
+              - /url: book.html
+  - generic [ref=e97]:
+    - heading "Accelerate Your Progress" [level=2] [ref=e98]
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - paragraph [ref=e101]: Level Up
+        - heading "Implementation Intensive" [level=3] [ref=e102]
+        - paragraph [ref=e103]: A 90-minute personalized deep-dive session to turn your learning into an exact, actionable identity blueprint.
+        - paragraph [ref=e104]: $497
+        - generic [ref=e105]:
+          - link "View Blueprint" [ref=e106] [cursor=pointer]:
+            - /url: intensive.html
+          - link "Get Started" [ref=e107] [cursor=pointer]:
+            - /url: checkout.html?program=intensive
+      - generic [ref=e108]:
+        - paragraph [ref=e109]: Support
+        - heading "The Integration Bundle" [level=3] [ref=e110]
+        - paragraph [ref=e111]: Guided regulation audios, expanded mapping workbooks, and a 'Trigger Response Playbook' for real-world support.
+        - paragraph [ref=e112]: $97
+        - link "Add to Masterclass" [ref=e113] [cursor=pointer]:
+          - /url: checkout.html?program=masterclass
+      - generic [ref=e114]:
+        - paragraph [ref=e115]: Quick Start
+        - heading "The Identity Mini-Training" [level=3] [ref=e116]
+        - paragraph [ref=e117]: A condensed 20-minute video lesson and worksheet for those who need a low-barrier first step into the work.
+        - paragraph [ref=e118]: $57
+        - link "Start Today" [ref=e119] [cursor=pointer]:
+          - /url: checkout.html?program=masterclass
+  - generic [ref=e121]:
+    - heading "Not Sure Where to Start?" [level=2] [ref=e122]
+    - generic [ref=e123]:
+      - generic [ref=e124]:
+        - generic [ref=e125]: "1"
+        - generic [ref=e126]:
+          - heading "If you're beginning to question the 'Fine'..." [level=4] [ref=e127]
+          - paragraph [ref=e128]:
+            - text: Start with
+            - strong [ref=e129]: The Masterclass
+            - text: (Level 1). It's designed to give you the foundational awareness of why you feel stuck and how to start shifting your internal narrative immediately.
+      - generic [ref=e130]:
+        - generic [ref=e131]: "2"
+        - generic [ref=e132]:
+          - heading "If you're ready for deep, structural transformation..." [level=4] [ref=e133]
+          - paragraph [ref=e134]:
+            - text: Join
+            - strong [ref=e135]: The Program
+            - text: (Level 2). This 12-week intensive is where the identity rewiring happens. This is for women who are done with survival mode and ready to rebuild how they operate.
+      - generic [ref=e136]:
+        - generic [ref=e137]: "3"
+        - generic [ref=e138]:
+          - heading "If you're ready to expand into sovereign leadership..." [level=4] [ref=e139]
+          - paragraph [ref=e140]:
+            - text: Apply for
+            - strong [ref=e141]: Sovereign VIP
+            - text: (Level 3). This private mentorship is for the high-level woman ready to lead from her truth and expand her life, wealth, and visibility at scale.
+  - generic [ref=e142]:
+    - heading "Still Have Questions?" [level=2] [ref=e143]
+    - paragraph [ref=e144]: Book a free 30-minute discovery call and get clear on exactly which path is right for you.
+    - link "Book Your Free Call" [ref=e145] [cursor=pointer]:
+      - /url: book.html
+  - contentinfo [ref=e146]:
+    - generic [ref=e148]:
+      - generic [ref=e149]:
+        - img "Jocelyn Lemke" [ref=e150]
+        - generic [ref=e151]:
+          - heading "Coaching With Michelle" [level=3] [ref=e152]
+          - paragraph [ref=e153]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e154] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e155]:
+            - link "Disclaimer / Privacy Policy / Terms and Conditions" [ref=e156] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e157]:
+        - heading "Supportive Links" [level=4] [ref=e158]
+        - list [ref=e159]:
+          - listitem [ref=e160]:
+            - link "Home" [ref=e161] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e162]:
+            - link "About" [ref=e163] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e164]:
+            - link "The Ecosystem" [ref=e165] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e166]:
+            - link "Book Your Call" [ref=e167] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e168]:
+            - link "Checkout" [ref=e169] [cursor=pointer]:
+              - /url: checkout.html
+      - img "Jocelyn Lemke" [ref=e171]
+  - button " Let's Connect" [ref=e172] [cursor=pointer]:
+    - generic [ref=e173]: 
+    - text: Let's Connect

@@ -1,0 +1,130 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Jocelyn Lemke" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - img "Jocelyn Lemke" [ref=e5]
+    - navigation [ref=e6]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "The Ecosystem " [ref=e13] [cursor=pointer]:
+            - /url: products.html
+            - text: The Ecosystem
+            - generic [ref=e14]: 
+        - listitem [ref=e15]:
+          - link "Book Your Call" [ref=e16] [cursor=pointer]:
+            - /url: book.html
+    - generic [ref=e17]:
+      - link [ref=e18] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e20]: 
+      - link "" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+  - generic [ref=e23]:
+    - heading "Meet Jocelyn Lemke" [level=1] [ref=e24]
+    - paragraph [ref=e25]: Women's Success Coach | Post-Divorce Identity Recovery | Emotional Clarity & Confidence
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - img "Jocelyn Lemke" [ref=e31]
+      - paragraph [ref=e32]: Jocelyn Lemke — Women's Success Coach
+    - generic [ref=e33]:
+      - heading "From Surviving to Sovereignly Leading" [level=2] [ref=e34]
+      - paragraph [ref=e35]:
+        - text: Jocelyn Lemke knows what it means to lose yourself — and what it takes to come back stronger, clearer, and more aligned than before. As the creator of the
+        - strong [ref=e36]: "'From Fine to Done' Ecosystem"
+        - text: ", she specializes in guiding women through the three phases of reclamation: Awareness, Transformation, and Expansion."
+      - paragraph [ref=e37]: Her approach is not about rushing the healing. It's about building a foundation so solid that nothing external can shake it again. Through her tiered programs, Jocelyn helps women rewire their identity, release deep-seated nervous system patterns, and step into their own sovereign authority.
+      - paragraph [ref=e38]:
+        - text: Whether you're starting with the
+        - strong [ref=e39]:
+          - link "Masterclass" [ref=e40] [cursor=pointer]:
+            - /url: masterclass.html
+        - text: to understand your patterns, or joining the
+        - strong [ref=e41]:
+          - link "12-week Transformation Program" [ref=e42] [cursor=pointer]:
+            - /url: program.html
+        - text: to rebuild how you operate, Jocelyn meets you exactly where you are — and walks with you toward the woman you are becoming.
+      - paragraph [ref=e43]: Her clients describe her as warm, deeply intuitive, and refreshingly direct. She doesn't do empty reassurance — she does transformational truth-telling wrapped in radical compassion.
+      - link "Explore the Ecosystem" [ref=e44] [cursor=pointer]:
+        - /url: products.html
+  - generic [ref=e46]:
+    - heading "What I Stand For" [level=2] [ref=e47]
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]: 
+        - heading "Authentic Growth" [level=3] [ref=e51]
+        - paragraph [ref=e52]: Real transformation isn't performance. It's patient, honest inner work that builds lasting roots.
+      - generic [ref=e53]:
+        - generic [ref=e54]: 
+        - heading "Emotional Safety" [level=3] [ref=e55]
+        - paragraph [ref=e56]: My coaching space is judgment-free. You can fall apart and be held at the same time.
+      - generic [ref=e57]:
+        - generic [ref=e58]: 
+        - heading "Clarity & Direction" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Confusion is not your destiny. You deserve to feel clear about who you are and where you're going.
+      - generic [ref=e61]:
+        - generic [ref=e62]: 
+        - heading "Grounded Confidence" [level=3] [ref=e63]
+        - paragraph [ref=e64]: Unshakeable self-worth isn't built overnight — but it is absolutely built. One layer at a time.
+      - generic [ref=e65]:
+        - generic [ref=e66]: 
+        - heading "Feminine Strength" [level=3] [ref=e67]
+        - paragraph [ref=e68]: Strength and softness coexist. You don't have to be hard to be powerful.
+      - generic [ref=e69]:
+        - generic [ref=e70]: 
+        - heading "Sovereign Identity" [level=3] [ref=e71]
+        - paragraph [ref=e72]: You are the author of your next chapter. No one else gets to write it for you.
+  - generic [ref=e73]:
+    - heading "My Mission" [level=2] [ref=e74]
+    - generic [ref=e75]: "\"You were not broken by your divorce. You were broken open. And inside that open space is where the real you — the sovereign, radiant, grounded you — is waiting to rise.\""
+    - paragraph [ref=e76]: "Every program, every call, every piece of content Jocelyn creates is in service of one thing: helping women step fully into themselves — not the version that was shaped by someone else's approval, but the version that was always meant to lead."
+    - link "Explore My Programs" [ref=e77] [cursor=pointer]:
+      - /url: products.html
+  - generic [ref=e78]:
+    - heading "Ready to Begin?" [level=2] [ref=e79]
+    - paragraph [ref=e80]: Your next chapter starts with a single, grounded step. Let's take it together.
+    - link "Book Your Free Call" [ref=e81] [cursor=pointer]:
+      - /url: book.html
+  - contentinfo [ref=e82]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - img "Jocelyn Lemke" [ref=e86]
+        - generic [ref=e87]:
+          - heading "Coaching With Michelle" [level=3] [ref=e88]
+          - paragraph [ref=e89]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e90] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e91]:
+            - link "Disclaimer / Privacy Policy / Terms and Conditions" [ref=e92] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e93]:
+        - heading "Supportive Links" [level=4] [ref=e94]
+        - list [ref=e95]:
+          - listitem [ref=e96]:
+            - link "Home" [ref=e97] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e98]:
+            - link "About" [ref=e99] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e100]:
+            - link "The Ecosystem" [ref=e101] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e102]:
+            - link "Book Your Call" [ref=e103] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e104]:
+            - link "Checkout" [ref=e105] [cursor=pointer]:
+              - /url: checkout.html
+      - img "Jocelyn Lemke" [ref=e107]
+  - button " Let's Connect" [ref=e108] [cursor=pointer]:
+    - generic [ref=e109]: 
+    - text: Let's Connect

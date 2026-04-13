@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Transformation - Jocelyn Michelle Lemke</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="checkout-styles.css">
+</head>
+<body>
+
+    <!-- Access Gate Overlay (shown until valid code is entered) -->
+    <div id="checkout-gate" class="checkout-gate-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+        <div class="checkout-gate-card">
+            <img src="images/hero-logo2.png" alt="Coaching with Michelle" class="gate-logo">
+            <h2 id="gate-title">Exclusive Access</h2>
+            <p class="gate-subtext">Enter your access code to view enrollment options.</p>
+            <p class="gate-no-code">No code yet? <a href="book.html">Book a free discovery call</a> to receive yours.</p>
+            <div class="gate-form">
+                <input type="text" id="gate-code-input" placeholder="ACCESS CODE" autocomplete="off" autocapitalize="characters" spellcheck="false">
+                <button id="gate-submit-btn" class="checkout-btn" style="letter-spacing: 1px;">Unlock Checkout</button>
+            </div>
+            <p id="gate-error" class="gate-error" aria-live="polite" style="display:none;">
+                Invalid code. Please try again or <a href="book.html">contact us</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="index.html"><img src="images/hero-logo2.png" alt="Jocelyn Lemke" class="main-logo-image"></a>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="has-dropdown">
+                    <a href="products.html">The Ecosystem <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="masterclass.html">Free Training: The Masterclass</a>
+                        <a href="program.html">The Program</a>
+                        <a href="vip.html">Sovereign VIP</a>
+                        <a href="intensive.html">Accelerator: Private Intensive</a>
+                        <a href="post-divorce-reset.html">Workshop: Post-Divorce Reset</a>
+                        <a href="confidence-reset.html">Workshop: Confidence Reset</a>
+                    </div>
+                </li>
+                <li><a href="book.html">Book Your Call</a></li>
+                <li><a href="checkout.html" class="active">Checkout</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-threads"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="images/hero-logo2.png" alt="Jocelyn Michelle Lemke" class="hero-portrait">
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title">Choose Your Transformation</h1>
+                <p class="hero-subtitle">Investment in yourself is the foundation of empowerment</p>
+            </div>
+        </div>
+        <div class="hero-divider"></div>
+    </section>
+
+    <!-- Programs Grid -->
+    <main class="programs-section">
+        <div class="container">
+            <div class="programs-grid">
+
+                <!-- Confidence Reset Workshop -->
+                <div class="program-card" data-program="confidence-reset">
+                    <div class="card-header">
+                        <p class="product-label" style="font-size: 0.65rem; color: var(--secondary); margin-bottom: 5px;">WORKSHOP</p>
+                        <h3 class="program-title">Confidence Reset</h3>
+                        <p class="program-subtitle">Identity-based confidence from the inside out</p>
+                    </div>
+                    <p class="program-description">Rebuild unshakeable, sovereign confidence rooted in identity — not performance. Choose the level of support that fits where you are.</p>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="confidence-reset-solo" name="confidence-reset-payment" checked>
+                            <label for="confidence-reset-solo">
+                                <span class="option-label">Self-Paced (No Support)</span>
+                                <span class="option-price">$297</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="confidence-reset-support" name="confidence-reset-payment">
+                            <label for="confidence-reset-support">
+                                <span class="option-label">With 1 Support Call</span>
+                                <span class="option-price">$597</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" data-program-id="confidence-reset">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Post-Divorce Reset Workshop -->
+                <div class="program-card" data-program="divorce-reset">
+                    <div class="card-header">
+                        <p class="product-label" style="font-size: 0.65rem; color: var(--secondary); margin-bottom: 5px;">WORKSHOP</p>
+                        <h3 class="program-title">Post-Divorce Reset</h3>
+                        <p class="program-subtitle">Reclaim your identity on the other side</p>
+                    </div>
+                    <p class="program-description">Stop surviving and start reclaiming. Rebuild identity, release survival patterns, and define who you are now.</p>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="divorce-reset-solo" name="divorce-reset-payment" checked>
+                            <label for="divorce-reset-solo">
+                                <span class="option-label">Self-Paced (No Support)</span>
+                                <span class="option-price">$497</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="divorce-reset-support" name="divorce-reset-payment">
+                            <label for="divorce-reset-support">
+                                <span class="option-label">With 2 Support Calls</span>
+                                <span class="option-price">$797</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" data-program-id="divorce-reset">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Implementation Intensive -->
+                <div class="program-card" data-program="intensive">
+                    <div class="card-header">
+                        <p class="product-label" style="font-size: 0.65rem; color: var(--secondary); margin-bottom: 5px;">PRIVATE ACCELERATOR</p>
+                        <h3 class="program-title">Implementation Intensive</h3>
+                        <p class="program-subtitle">Your 90-minute identity blueprint</p>
+                    </div>
+                    <p class="program-description">One 90-minute 1:1 deep dive with Jocelyn. Walk away with a crystal-clear map of your identity patterns and exact steps to rewire them.</p>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="intensive-full" name="intensive-payment" checked>
+                            <label for="intensive-full">
+                                <span class="option-label">Pay In Full</span>
+                                <span class="option-price">$1,297</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="intensive-2" name="intensive-payment">
+                            <label for="intensive-2">
+                                <span class="option-label">2 Payments of $648.50</span>
+                                <span class="option-price">$648.50 now</span>
+                            </label>
+                            <p style="font-size: 0.75rem; color: var(--text-light); margin: 4px 0 0 28px;">Second payment of $648.50 will be invoiced.</p>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" data-program-id="intensive">
+                        Book Your Intensive
+                    </button>
+                </div>
+
+                <!-- The Program -->
+                <div class="program-card featured" data-program="program">
+                    <div class="featured-badge" style="background: var(--primary);">FLAGSHIP</div>
+                    <div class="card-header">
+                        <p class="product-label" style="font-size: 0.65rem; color: var(--white); opacity: 0.8; margin-bottom: 5px;">6–8 WEEK INTENSIVE</p>
+                        <h3 class="program-title">The Program</h3>
+                        <p class="program-subtitle">The Ascension Framework — fully applied</p>
+                    </div>
+                    <p class="program-description">A 6–8 week structured intensive where the actual identity rewiring happens. All four Ascension Framework pillars with full accountability.</p>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="program-pif" name="program-payment" checked>
+                            <label for="program-pif">
+                                <span class="option-label">Pay In Full <span style="font-size: 0.75em; opacity: 0.8;">(Save $500)</span></span>
+                                <span class="option-price">$3,500</span>
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="program-plan" name="program-payment">
+                            <label for="program-plan">
+                                <span class="option-label">Payment Plan</span>
+                                <span class="option-price">$2,000 + 2×$1,000</span>
+                            </label>
+                            <p style="font-size: 0.75rem; color: var(--text-light); margin: 4px 0 0 28px;">$2,000 due today. Two $1,000 installments invoiced monthly.</p>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" data-program-id="program">
+                        Join The Program
+                    </button>
+                </div>
+
+                <!-- Sovereign VIP -->
+                <div class="program-card featured pinnacle" data-program="vip">
+                    <div class="featured-badge gold">VIP</div>
+                    <div class="card-header">
+                        <p class="product-label" style="font-size: 0.65rem; color: #fff; opacity: 0.8; margin-bottom: 5px;">PRIVATE MENTORSHIP</p>
+                        <h3 class="program-title">Sovereign VIP</h3>
+                        <p class="program-subtitle">Elite private mentorship — by invitation</p>
+                    </div>
+                    <p class="program-description">Reserved for women ready for deep proximity, rapid expansion, and legacy-level leadership. High-touch 1:1 container with direct access to Jocelyn.</p>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="vip-full" name="vip-payment" checked>
+                            <label for="vip-full">
+                                <span class="option-label">Pay In Full</span>
+                                <span class="option-price">$7,000</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" data-program-id="vip">
+                        Apply for VIP
+                    </button>
+                </div>
+
+                <!-- Masterclass VIP Ticket -->
+                <div class="program-card" data-program="masterclass-vip-card">
+                    <div class="card-header">
+                        <p class="product-label" style="font-size: 0.65rem; color: var(--secondary); margin-bottom: 5px;">VIP ADD-ON</p>
+                        <h3 class="program-title">Masterclass VIP Ticket</h3>
+                        <p class="program-subtitle">An extra hour with Jocelyn — live Q&amp;A</p>
+                    </div>
+                    <p class="program-description">Already registered for the free Masterclass? Upgrade to VIP and stay for an additional hour of live Q&amp;A directly with Jocelyn.</p>
+
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="masterclass-vip" name="masterclass-vip-payment" checked>
+                            <label for="masterclass-vip">
+                                <span class="option-label">VIP Upgrade</span>
+                                <span class="option-price">$97</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn" data-program-id="masterclass-vip-card">
+                        Upgrade to VIP
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/eb2ff8_dbc59ce845db421fa8bd4d55761d2450~mv2.avif" alt="Jocelyn Lemke" class="footer-profile-img">
+                <div class="footer-contact">
+                    <h2 class="footer-title">Coaching With Michelle</h2>
+                    <p>Email: <a href="mailto:Jocelyn@coachingwithmichelle.org">Jocelyn@coachingwithmichelle.org</a></p>
+                    <p class="footer-legal"><a href="legal.html">Disclaimer / Privacy Policy / Terms of Use</a></p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-subtitle">Supportive Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="book.html">Book Your Call</a></li>
+                    <li><a href="checkout.html">Checkout</a></li>
+                <li><a href="legal.html">Legal</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <img src="images/footer-banner.png" alt="Jocelyn Lemke" class="footer-banner-image">
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <button class="chat-btn">
+        <i class="fa-solid fa-comment"></i> Let's Connect
+    </button>
+
+    <script src="scripts/main.js?v=5"></script>
+    <script src="scripts/access-gate.js"></script>
+    <script src="checkout-script.js"></script>
+</body>
+</html>

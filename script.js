@@ -14,131 +14,78 @@
 // ========================================
 // STRIPE PAYMENT LINKS CONFIGURATION
 // ========================================
+// ========================================
+// STRIPE PAYMENT LINKS CONFIGURATION
+// ========================================
 const stripeLinks = {
-    // Program 1: The Confident Reset
-    'reset-full': 'https://book.stripe.com/test_bJecN72pu7LxaFgbmm3oA00',
+    // LEVEL 1: Masterclass
+    'masterclass-beta': 'https://buy.stripe.com/test_dRm00l4xCc1NdRs3TU3oA0f', // Placeholder for Beta
+    'masterclass-full': 'https://buy.stripe.com/test_28E7sN0hme9V9Bc6223oA03',
 
-    // Program 2: Rebuild: The Confidence Foundation
-    'rebuild-full': 'https://book.stripe.com/test_4gMcN74xC1n900C8aa3oA06',
+    // LEVEL 2: The Program
+    'program-self': 'https://book.stripe.com/test_dRmcN7e8cfdZdRsbmm3oA04',
+    'program-supported': 'https://book.stripe.com/test_bJe7sN2puc1N7t4aii3oA02',
+    'program-plan': 'https://buy.stripe.com/test_fZu6oJc048PB28K4XY3oA08',
 
-    // Program 3: Thrive: Advanced Confidence Mastery
-    'thrive-full': 'https://book.stripe.com/test_00w00ld48c1NeVwcqq3oA05',
+    // LEVEL 3: Sovereign VIP
+    'vip-mid': 'https://book.stripe.com/test_dRmeVf5BG8PB3cO0HI3oA01',
+    'vip-high': 'https://buy.stripe.com/test_3cIeVf6FK5DpaFg4XY3oA0a',
 
-    // Program 4: Confidence Mastery + VIP Support
-    'vip-full': 'https://book.stripe.com/test_dRmcN7e8cfdZdRsbmm3oA04',
-
-    // Program 5: The Empowered Identity Blueprint
-    'blueprint-early': 'https://buy.stripe.com/test_dRm00l4xCc1NdRs3TU3oA0f',
-    'blueprint-full': 'https://buy.stripe.com/test_28E7sN0hme9V9Bc6223oA03',
-    'blueprint-3': 'https://buy.stripe.com/test_fZu6oJc048PB28K4XY3oA08',
-    'blueprint-4': 'https://buy.stripe.com/test_bJe28te8ce9V3cO1LM3oA0j',
-    'blueprint-6': 'https://buy.stripe.com/test_fZu4gBfcg1n9aFg2PQ3oA0i',
-
-    // Program 6: The Complete Reinvention Intensive
-    'reinvention-early': 'https://book.stripe.com/test_bJe7sN2puc1N7t4aii3oA02',
-    'reinvention-full': 'https://buy.stripe.com/test_00wbJ3e8cd5RbJkcqq3oA0e',
-    'reinvention-2': 'https://buy.stripe.com/test_7sYeVf7JO4zl5kW8aa3oA0g',
-    'reinvention-4': 'https://buy.stripe.com/test_8x2cN70hm6HteVw0HI3oA0h',
-
-    // Program 7: The Pinnacle: Complete Life Mastery
-    'pinnacle-early': 'https://buy.stripe.com/test_eVq8wR6FK7Lx4gSduu3oA0d',
-    'pinnacle-full': 'https://book.stripe.com/test_dRmeVf5BG8PB3cO0HI3oA01',
-    'pinnacle-2': 'https://buy.stripe.com/test_eVq9AVaW0aXJfZAbmm3oA0c',
-    'pinnacle-4': 'https://buy.stripe.com/test_9B614pd488PBaFg4XY3oA0b',
-    'pinnacle-12': 'https://buy.stripe.com/test_3cIeVf6FK5DpaFg4XY3oA0a'
+    // Add-ons & Intensive
+    'intensive': 'https://buy.stripe.com/test_00wbJ3e8cd5RbJkcqq3oA0e'
 };
 
 // ========================================
 // PROGRAM DATA CONFIGURATION
 // ========================================
 const programData = {
-    'confident-reset': {
-        title: 'The Confident Reset',
-        subtitle: 'A 7-Day Reconnection Experience',
-        price: '$97',
-        badge: null,
-        description: 'A focused reset designed for women ready to break free from emotional exhaustion and rediscover their inner confidence. Learn how to silence self-doubt, rebuild daily motivation, and reconnect with your true sense of power. A perfect quick-start for your confidence journey.',
-        buttonText: 'Begin Your Reset',
+    'masterclass': {
+        title: 'From Fine to Done: The Masterclass',
+        subtitle: 'The Awareness Foundation (Entry Class)',
+        price: '$247 — $497',
+        badge: 'New Launch',
+        description: 'A foundational 4–6 week digital class teaching the core framework behind identity patterns, nervous system activation, and why \'fine\' feels like survival. Perfect for women ready to understand what\'s been holding them back.',
+        buttonText: 'Enroll in Masterclass',
         paymentOptions: [
-            { id: 'reset-full', name: 'reset-payment', label: 'Pay in Full', price: '$97', value: '97', checked: true }
+            { id: 'masterclass-beta', name: 'master-payment', label: 'Beta Launch (10 Spots Only)', price: '$247', value: '247', checked: true, savings: '50% Off' },
+            { id: 'masterclass-full', name: 'master-payment', label: 'Standard Price', price: '$497', value: '497' }
         ]
     },
-    'rebuild': {
-        title: 'Rebuild: The Confidence Foundation',
-        subtitle: '30-Day Confidence Transformation',
-        price: '$397',
-        badge: null,
-        description: 'A comprehensive 30-day program designed to rebuild your confidence from the ground up. You\'ll uncover limiting beliefs, develop new empowering habits, and create a solid foundation for lasting self-assurance.',
-        buttonText: 'Start Rebuilding',
+    'core-program': {
+        title: 'From Fine to Done: The Program',
+        subtitle: '12 Weeks of Identity & Pattern Rewiring',
+        price: '$997 — $2,000',
+        badge: 'Recommended',
+        description: 'Our flagship 12-week intensive designed for women ready to genuinely shift how they operate. Structured curriculum, accountability, and the actual rewiring of your operant patterns.',
+        buttonText: 'Join the Program',
         paymentOptions: [
-            { id: 'rebuild-full', name: 'rebuild-payment', label: 'Pay in Full', price: '$397', value: '397', checked: true }
+            { id: 'program-supported', name: 'program-payment', label: 'Supported Tier (Group Coaching)', price: '$2,000', value: '2000', checked: true },
+            { id: 'program-self', name: 'program-payment', label: 'Self-Paced Tier', price: '$997', value: '997' },
+            { id: 'program-plan', name: 'program-payment', label: 'Supported Payment Plan', price: '$697/mo (3)', value: '697' }
         ]
     },
-    'thrive': {
-        title: 'Thrive: Advanced Confidence Mastery',
-        subtitle: '90-Day Deep Transformation',
-        price: '$697',
-        badge: null,
-        description: 'Take your confidence to the next level with this advanced 90-day program. Master emotional resilience, develop unshakeable self-belief, and learn advanced techniques for thriving in all areas of life.',
-        buttonText: 'Start Thriving',
-        paymentOptions: [
-            { id: 'thrive-full', name: 'thrive-payment', label: 'Pay in Full', price: '$697', value: '697', checked: true }
-        ]
-    },
-    'vip': {
-        title: 'Confidence Mastery + VIP Support',
-        subtitle: 'Premium 1-on-1 Coaching Experience',
-        price: '$997',
-        badge: 'VIP',
-        description: 'Experience personalized transformation with dedicated VIP support. This premium program includes everything in Thrive plus exclusive 1-on-1 coaching sessions, priority access, and personalized guidance tailored to your unique journey.',
-        buttonText: 'Claim VIP Access',
-        paymentOptions: [
-            { id: 'vip-full', name: 'vip-payment', label: 'Pay in Full', price: '$997', value: '997', checked: true }
-        ]
-    },
-    'blueprint': {
-        title: 'The Empowered Identity Blueprint',
-        subtitle: 'Redesign Your Life from the Inside Out',
-        price: '$5,000 — $5,500',
-        badge: 'Premium',
-        description: 'A full-spectrum transformation experience that helps you embody your most authentic, confident, and purpose-driven self. Through guided coaching and proven identity-building frameworks, you\'ll create alignment in your goals, emotions, and daily systems.',
-        buttonText: 'Claim Your Blueprint',
-        paymentOptions: [
-            { id: 'blueprint-early', name: 'blueprint-payment', label: 'Early Pay in Full', price: '$5,000', value: '5000', checked: true, savings: 'Save $500' },
-            { id: 'blueprint-full', name: 'blueprint-payment', label: 'Pay in Full', price: '$5,500', value: '5500' },
-            { id: 'blueprint-3', name: 'blueprint-payment', label: '3 Monthly Payments', price: '$1,897/mo', value: '1897' },
-            { id: 'blueprint-4', name: 'blueprint-payment', label: '4 Monthly Payments', price: '$1,496/mo', value: '1496' },
-            { id: 'blueprint-6', name: 'blueprint-payment', label: '6 Monthly Payments', price: '$997/mo', value: '997' }
-        ]
-    },
-    'reinvention': {
-        title: 'The Complete Reinvention Intensive',
-        subtitle: 'Rebuild Your Confidence, Leadership, and Life Systems',
-        price: '$7,000 — $7,500',
-        badge: 'Elite',
-        description: 'This high-level coaching experience blends emotional strategy with structural life redesign. You\'ll develop the systems, habits, and inner frameworks to sustain balance, confidence, and fulfillment long-term. Perfect for women stepping into leadership in life and career.',
-        buttonText: 'Begin Your Reinvention',
-        paymentOptions: [
-            { id: 'reinvention-early', name: 'reinvention-payment', label: 'Early Pay in Full', price: '$7,000', value: '7000', checked: true, savings: 'Save $500' },
-            { id: 'reinvention-full', name: 'reinvention-payment', label: 'Pay in Full', price: '$7,500', value: '7500' },
-            { id: 'reinvention-2', name: 'reinvention-payment', label: '2 Monthly Payments', price: '$3,897/mo', value: '3897' },
-            { id: 'reinvention-4', name: 'reinvention-payment', label: '4 Monthly Payments', price: '$1,997/mo', value: '1997' }
-        ]
-    },
-    'pinnacle': {
-        title: 'The Pinnacle: Complete Life Mastery',
-        subtitle: 'The Ultimate Transformation Experience',
-        price: '$14,000 — $15,000',
-        badge: 'Signature',
+    'sovereign-vip': {
+        title: 'Sovereign VIP Experience',
+        subtitle: 'Elite Private Identity Mentorship',
+        price: '$3,000 — $10,000',
+        badge: 'Exclusive',
         badgeClass: 'gold',
-        description: 'The ultimate transformation experience for women ready to completely reinvent every aspect of their lives. This comprehensive program combines all elements of our coaching methodology with exclusive VIP access, personalized strategy sessions, and ongoing support for lasting transformation.',
-        buttonText: 'Reach Your Pinnacle',
+        description: 'Private, invitation-only access for identity expansion, high-level decision coaching, and visibility building. Direct proximity and real-time support from Jocelyn.',
+        buttonText: 'Apply for VIP Access',
         paymentOptions: [
-            { id: 'pinnacle-early', name: 'pinnacle-payment', label: 'Early Pay in Full', price: '$14,000', value: '14000', checked: true, savings: 'Save $1,000' },
-            { id: 'pinnacle-full', name: 'pinnacle-payment', label: 'Pay in Full', price: '$15,000', value: '15000' },
-            { id: 'pinnacle-2', name: 'pinnacle-payment', label: '2 Monthly Payments', price: '$7,750/mo', value: '7750' },
-            { id: 'pinnacle-4', name: 'pinnacle-payment', label: '4 Monthly Payments', price: '$3,997/mo', value: '3997' },
-            { id: 'pinnacle-12', name: 'pinnacle-payment', label: '12 Monthly Payments', price: '$1,397/mo', value: '1397' }
+            { id: 'vip-mid', name: 'vip-payment', label: 'Mid-Tier VIP (3 Months)', price: '$5,000', value: '5000', checked: true },
+            { id: 'vip-high', name: 'vip-payment', label: 'High-Tier VIP (6 Months)', price: '$10,000', value: '10000' }
+        ]
+    },
+    'intensive': {
+        title: 'Private Implementation Intensive',
+        subtitle: 'Your 90-Minute Identity Blueprint',
+        price: '$497',
+        badge: 'Upsell',
+        description: 'A deep-dive session to take what you\'ve learned and turn it into your exact blueprint. 1:1 strategy, pattern mapping, and customized action plan.',
+        buttonText: 'Book Intensive',
+        paymentOptions: [
+            { id: 'intensive', name: 'intensive-payment', label: 'One Payment', price: '$497', value: '497', checked: true }
         ]
     }
 };

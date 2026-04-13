@@ -1,4 +1,6 @@
 # System Files
+functions/.env
+functions/node_modules/
 .DS_Store
 .vscode/
 .claude/

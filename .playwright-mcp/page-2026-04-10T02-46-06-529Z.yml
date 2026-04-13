@@ -1,0 +1,174 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Jocelyn Lemke" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - img "Jocelyn Lemke" [ref=e5]
+    - navigation [ref=e6]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "The Ecosystem " [ref=e13] [cursor=pointer]:
+            - /url: products.html
+            - text: The Ecosystem
+            - generic [ref=e14]: 
+        - listitem [ref=e15]:
+          - link "Book Your Call" [ref=e16] [cursor=pointer]:
+            - /url: book.html
+    - generic [ref=e17]:
+      - link [ref=e18] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e20]: 
+      - link "" [ref=e21] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e22]: 
+  - generic [ref=e26]:
+    - paragraph [ref=e27]: INTRODUCING THE ECOSYSTEM
+    - heading "FROM FINE TO DONE." [level=1] [ref=e28]:
+      - text: FROM FINE
+      - text: TO DONE.
+    - paragraph [ref=e29]: A three-tier ascension model designed to move you from awareness → transformation → expansion. It's time to stop feeling 'fine' and start being DONE with survival mode.
+    - generic [ref=e30]:
+      - link "EXPLORE THE TIERS" [ref=e31] [cursor=pointer]:
+        - /url: products.html
+      - link "BOOK A DISCOVERY CALL" [ref=e32] [cursor=pointer]:
+        - /url: book.html
+  - generic [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]: "1"
+      - generic [ref=e36]: Awareness
+    - generic [ref=e37]:
+      - generic [ref=e38]: "2"
+      - generic [ref=e39]: Transformation
+    - generic [ref=e40]:
+      - generic [ref=e41]: "3"
+      - generic [ref=e42]: Expansion
+  - generic [ref=e45]:
+    - generic [ref=e46]:
+      - heading "The complete transformation path." [level=2] [ref=e47]
+      - paragraph [ref=e48]: Our ecosystem is designed as an ascension. Each tier deepens the work, increases your capacity, and anchors your new identity into something unshakeable.
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: "1"
+          - generic [ref=e52]:
+            - heading "Awareness" [level=4] [ref=e53]
+            - paragraph [ref=e54]: The Masterclass. Shift your perspective and identify the patterns keeping you 'fine'.
+        - generic [ref=e55]:
+          - generic [ref=e56]: "2"
+          - generic [ref=e57]:
+            - heading "Transformation" [level=4] [ref=e58]
+            - paragraph [ref=e59]: The Program. 12 weeks of structured rewiring and nervous system regulation.
+        - generic [ref=e60]:
+          - generic [ref=e61]: "3"
+          - generic [ref=e62]:
+            - heading "Expansion" [level=4] [ref=e63]
+            - paragraph [ref=e64]: Sovereign VIP. High-level leadership and expansion in an elite private container.
+      - link "Explore All Programs" [ref=e65] [cursor=pointer]:
+        - /url: products.html
+    - generic [ref=e66]:
+      - img "Core Transformation" [ref=e67]
+      - paragraph [ref=e69]: "\"Rewrite your future by changing the person experiencing it. This is your reclamation.\""
+  - generic [ref=e71]:
+    - heading "Beyond 'Fine'" [level=2] [ref=e72]
+    - paragraph [ref=e73]: Most women settle for being "fine." But "fine" is just survival with a smile. Our framework moves you into actual, measurable identity expansion.
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]: 
+        - heading "Identity Rewiring" [level=3] [ref=e77]
+        - paragraph [ref=e78]: We don't just change your habits; we change the internal architecture of who you believe you are. This ensures changes actually stick for good.
+      - generic [ref=e79]:
+        - generic [ref=e80]: 
+        - heading "Sovereign Calibration" [level=3] [ref=e81]
+        - paragraph [ref=e82]: Build a nervous system that feels safe enough to lead, safe enough to want more, and safe enough to expand into the life you deserve.
+  - generic [ref=e84]:
+    - heading "The Transformation Tiers" [level=2] [ref=e85]
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - generic [ref=e88]:
+          - paragraph [ref=e89]: "LEVEL 1: Awareness"
+          - heading "The Masterclass" [level=3] [ref=e90]
+        - generic [ref=e91]:
+          - paragraph [ref=e92]: Foundational identity mapping. Understand the patterns that keep you small.
+          - generic [ref=e93]:
+            - link "Learn More" [ref=e94] [cursor=pointer]:
+              - /url: masterclass.html
+            - link "Enroll - $247" [ref=e95] [cursor=pointer]:
+              - /url: checkout.html?program=masterclass
+      - generic [ref=e96]:
+        - generic [ref=e97]: TRANSFORMATION INTENSIVE
+        - generic [ref=e98]:
+          - paragraph [ref=e99]: "LEVEL 2: Transformation"
+          - heading "The Program" [level=3] [ref=e100]
+        - generic [ref=e101]:
+          - paragraph [ref=e102]: 12 weeks of deep rewiring and accountability. Move from awareness to actual change.
+          - generic [ref=e103]:
+            - link "View Program" [ref=e104] [cursor=pointer]:
+              - /url: program.html
+            - link "Join Now" [ref=e105] [cursor=pointer]:
+              - /url: checkout.html?program=core
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - paragraph [ref=e108]: "LEVEL 3: Expansion"
+          - heading "Sovereign VIP" [level=3] [ref=e109]
+        - generic [ref=e110]:
+          - paragraph [ref=e111]: Private 1:1 mentorship for the woman ready for total life reinvention.
+          - generic [ref=e112]:
+            - link "Explore VIP" [ref=e113] [cursor=pointer]:
+              - /url: vip.html
+            - link "Apply Now" [ref=e114] [cursor=pointer]:
+              - /url: book.html
+  - generic [ref=e117]:
+    - img "Jocelyn Lemke" [ref=e119]
+    - generic [ref=e120]:
+      - paragraph [ref=e121]: MEET YOUR GUIDE
+      - heading "Jocelyn Lemke" [level=2] [ref=e122]
+      - paragraph [ref=e123]: I help women who have been broken open by life — divorce, career transitions, identity loss — find the grounded, sovereign version of themselves that was always waiting to rise.
+      - link "Learn More About My Story" [ref=e124] [cursor=pointer]:
+        - /url: about.html
+  - generic [ref=e126]:
+    - heading "Stay Grounded & Inspired" [level=2] [ref=e127]
+    - paragraph [ref=e128]: Join women who are rebuilding with intention. Receive coaching insights, resources, and encouragement — straight to your inbox.
+    - generic [ref=e129]:
+      - textbox "Your email address" [ref=e130]
+      - button "Subscribe" [ref=e131] [cursor=pointer]
+  - contentinfo [ref=e132]:
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - img "Jocelyn Lemke" [ref=e136]
+        - generic [ref=e137]:
+          - heading "Coaching With Michelle" [level=3] [ref=e138]
+          - paragraph [ref=e139]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e140] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e141]:
+            - link "Disclaimer / Privacy Policy / Terms and Conditions" [ref=e142] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e143]:
+        - heading "Supportive Links" [level=4] [ref=e144]
+        - list [ref=e145]:
+          - listitem [ref=e146]:
+            - link "Home" [ref=e147] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e148]:
+            - link "About" [ref=e149] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e150]:
+            - link "The Ecosystem" [ref=e151] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e152]:
+            - link "Book Your Call" [ref=e153] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e154]:
+            - link "Checkout" [ref=e155] [cursor=pointer]:
+              - /url: checkout.html
+      - img "Jocelyn Lemke" [ref=e157]
+  - button " Let's Connect" [ref=e158] [cursor=pointer]:
+    - generic [ref=e159]: 
+    - text: Let's Connect
