@@ -143,6 +143,7 @@ function renderProgramCard(container, program, programKey) {
     program.paymentOptions.forEach(option => {
         const savingsBadge = option.savings ? `<span class="savings-badge">${option.savings}</span>` : '';
         const checkedAttr = option.checked ? 'checked' : '';
+        const description = option.description ? `<span class=\"option-note\">${option.description}</span>` : '';
 
         paymentOptionsHTML += `
             <div class="payment-option" data-payment-id="${option.id}">
