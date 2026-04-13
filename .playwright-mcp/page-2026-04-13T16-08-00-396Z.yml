@@ -1,0 +1,203 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Jocelyn Lemke" [ref=e4] [cursor=pointer]:
+      - /url: index.html
+      - img "Jocelyn Lemke" [ref=e5]
+    - navigation [ref=e6]:
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "Home" [ref=e9] [cursor=pointer]:
+            - /url: index.html
+        - listitem [ref=e10]:
+          - link "About" [ref=e11] [cursor=pointer]:
+            - /url: about.html
+        - listitem [ref=e12]:
+          - link "The Ecosystem " [ref=e13] [cursor=pointer]:
+            - /url: products.html
+            - text: The Ecosystem
+            - generic [ref=e14]: 
+        - listitem [ref=e15]:
+          - link "Book Your Call" [ref=e16] [cursor=pointer]:
+            - /url: book.html
+        - listitem [ref=e17]:
+          - link "Checkout" [ref=e18] [cursor=pointer]:
+            - /url: checkout.html
+        - listitem [ref=e19]:
+          - link "Legal" [ref=e20] [cursor=pointer]:
+            - /url: legal.html
+    - generic [ref=e21]:
+      - link [ref=e22] [cursor=pointer]:
+        - /url: "#"
+      - link "" [ref=e23] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e24]: 
+      - link "" [ref=e25] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e26]: 
+  - generic [ref=e30]:
+    - paragraph [ref=e31]: INTRODUCING THE ASCENSION FRAMEWORK
+    - heading "FROM FINE TO DONE." [level=1] [ref=e32]:
+      - text: FROM FINE
+      - text: TO DONE.
+    - paragraph [ref=e33]: A four-pillar framework designed to move you from Awareness → Activation → Application → Ascension. It's time to stop feeling 'fine' and start being DONE with survival mode.
+    - generic [ref=e34]:
+      - link "EXPLORE THE PROGRAMS" [ref=e35] [cursor=pointer]:
+        - /url: products.html
+      - link "BOOK A DISCOVERY CALL" [ref=e36] [cursor=pointer]:
+        - /url: book.html
+  - generic [ref=e37]:
+    - generic [ref=e38]:
+      - generic [ref=e39]: "1"
+      - generic [ref=e40]: Awareness
+    - generic [ref=e41]:
+      - generic [ref=e42]: "2"
+      - generic [ref=e43]: Activation
+    - generic [ref=e44]:
+      - generic [ref=e45]: "3"
+      - generic [ref=e46]: Application
+    - generic [ref=e47]:
+      - generic [ref=e48]: "4"
+      - generic [ref=e49]: Ascension
+  - generic [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]: The Framework
+      - heading "The Ascension Framework." [level=2] [ref=e55]
+      - paragraph [ref=e56]: Every program Jocelyn runs is built on the same four-pillar framework. Each pillar builds on the last, moving you from stuck and surviving to grounded, sovereign, and fully expressed.
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: "1"
+          - generic [ref=e60]:
+            - heading "Awareness" [level=4] [ref=e61]
+            - paragraph [ref=e62]: Decode the identity patterns, beliefs, and survival loops keeping you stuck in 'fine.'
+        - generic [ref=e63]:
+          - generic [ref=e64]: "2"
+          - generic [ref=e65]:
+            - heading "Activation" [level=4] [ref=e66]
+            - paragraph [ref=e67]: Activate the identity shift. Regulate your nervous system so change actually feels safe.
+        - generic [ref=e68]:
+          - generic [ref=e69]: "3"
+          - generic [ref=e70]:
+            - heading "Application" [level=4] [ref=e71]
+            - paragraph [ref=e72]: Apply the framework through structured, accountable program work that produces real results.
+        - generic [ref=e73]:
+          - generic [ref=e74]: "4"
+          - generic [ref=e75]:
+            - heading "Ascension" [level=4] [ref=e76]
+            - paragraph [ref=e77]: Expand into sovereign leadership — and a life built entirely on your terms.
+      - link "Explore All Programs" [ref=e78] [cursor=pointer]:
+        - /url: products.html
+    - generic [ref=e79]:
+      - img "Core Transformation" [ref=e80]
+      - paragraph [ref=e82]: "\"Rewrite your future by changing the person experiencing it. This is your reclamation.\""
+  - generic [ref=e84]:
+    - heading "Beyond 'Fine'" [level=2] [ref=e85]
+    - paragraph [ref=e86]: Most women settle for being "fine." But "fine" is just survival with a smile. The Ascension Framework moves you into actual, measurable identity transformation — from the inside out.
+    - generic [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]: 
+        - heading "Awareness" [level=3] [ref=e90]
+        - paragraph [ref=e91]: Understand the internal circuitry keeping you stuck. See the patterns clearly for the first time.
+      - generic [ref=e92]:
+        - generic [ref=e93]: 
+        - heading "Activation" [level=3] [ref=e94]
+        - paragraph [ref=e95]: Activate the identity shift. Regulate your nervous system so change feels safe — not threatening.
+      - generic [ref=e96]:
+        - generic [ref=e97]: 
+        - heading "Application" [level=3] [ref=e98]
+        - paragraph [ref=e99]: Apply the work through structured programs built to produce real, lasting results — not temporary motivation.
+      - generic [ref=e100]:
+        - generic [ref=e101]: 
+        - heading "Ascension" [level=3] [ref=e102]
+        - paragraph [ref=e103]: Expand into sovereign leadership. Build a life, identity, and presence that is fully and unapologetically yours.
+  - generic [ref=e105]:
+    - generic [ref=e106]:
+      - generic [ref=e107]: Choose Your Path
+      - heading "The Programs" [level=2] [ref=e108]
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]:
+          - paragraph [ref=e112]: FREE LIVE TRAINING
+          - heading "The Masterclass" [level=3] [ref=e113]
+        - generic [ref=e114]:
+          - paragraph [ref=e115]: Join Jocelyn for a live training where she walks you through The Ascension Framework and shows you exactly how it applies to your life.
+          - generic [ref=e116]:
+            - link "Learn More" [ref=e117] [cursor=pointer]:
+              - /url: masterclass.html
+            - link "Book Your Discovery Call" [ref=e118] [cursor=pointer]:
+              - /url: book.html
+      - generic [ref=e119]:
+        - generic [ref=e120]: THE ASCENSION FRAMEWORK IN ACTION
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: 12-WEEK INTENSIVE
+          - heading "The Program" [level=3] [ref=e123]
+        - generic [ref=e124]:
+          - paragraph [ref=e125]: 12 weeks of structured identity rewiring and nervous system work. This is where all four pillars of the Ascension Framework come alive.
+          - generic [ref=e126]:
+            - link "View Program" [ref=e127] [cursor=pointer]:
+              - /url: program.html
+            - link "Book Your Discovery Call" [ref=e128] [cursor=pointer]:
+              - /url: book.html
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - paragraph [ref=e131]: PRIVATE MENTORSHIP
+          - heading "Sovereign VIP" [level=3] [ref=e132]
+        - generic [ref=e133]:
+          - paragraph [ref=e134]: Elite 1:1 mentorship for the woman ready to ascend into sovereign leadership and a life built entirely on her own terms.
+          - generic [ref=e135]:
+            - link "Explore VIP" [ref=e136] [cursor=pointer]:
+              - /url: vip.html
+            - link "Book Your Discovery Call" [ref=e137] [cursor=pointer]:
+              - /url: book.html
+  - generic [ref=e140]:
+    - img "Jocelyn Lemke" [ref=e142]
+    - generic [ref=e143]:
+      - generic [ref=e144]: Meet Your Guide
+      - heading "Jocelyn Lemke" [level=2] [ref=e145]
+      - paragraph [ref=e146]: I help women who have been broken open by life — divorce, career transitions, identity loss — find the grounded, sovereign version of themselves that was always waiting to rise.
+      - link "Learn More About My Story" [ref=e147] [cursor=pointer]:
+        - /url: about.html
+  - generic [ref=e149]:
+    - generic [ref=e150]: Stay Connected
+    - heading "Stay Grounded & Inspired" [level=2] [ref=e151]
+    - paragraph [ref=e152]: Join women who are rebuilding with intention. Receive coaching insights, resources, and encouragement — straight to your inbox.
+    - generic [ref=e153]:
+      - textbox "Your email address" [ref=e154]
+      - button "Subscribe" [ref=e155] [cursor=pointer]
+  - contentinfo [ref=e156]:
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - img "Jocelyn Lemke" [ref=e160]
+        - generic [ref=e161]:
+          - heading "Coaching With Michelle" [level=3] [ref=e162]
+          - paragraph [ref=e163]:
+            - text: "Email:"
+            - link "Jocelyn@coachingwithmichelle.org" [ref=e164] [cursor=pointer]:
+              - /url: mailto:Jocelyn@coachingwithmichelle.org
+          - paragraph [ref=e165]:
+            - link "Disclaimer / Privacy Policy / Terms of Use" [ref=e166] [cursor=pointer]:
+              - /url: legal.html
+      - generic [ref=e167]:
+        - heading "Supportive Links" [level=4] [ref=e168]
+        - list [ref=e169]:
+          - listitem [ref=e170]:
+            - link "Home" [ref=e171] [cursor=pointer]:
+              - /url: index.html
+          - listitem [ref=e172]:
+            - link "About" [ref=e173] [cursor=pointer]:
+              - /url: about.html
+          - listitem [ref=e174]:
+            - link "The Ecosystem" [ref=e175] [cursor=pointer]:
+              - /url: products.html
+          - listitem [ref=e176]:
+            - link "Book Your Call" [ref=e177] [cursor=pointer]:
+              - /url: book.html
+          - listitem [ref=e178]:
+            - link "Checkout" [ref=e179] [cursor=pointer]:
+              - /url: checkout.html
+          - listitem [ref=e180]:
+            - link "Legal" [ref=e181] [cursor=pointer]:
+              - /url: legal.html
+      - img "Jocelyn Lemke" [ref=e183]
+  - button " Let's Connect" [ref=e184] [cursor=pointer]:
+    - generic [ref=e185]: 
+    - text: Let's Connect
