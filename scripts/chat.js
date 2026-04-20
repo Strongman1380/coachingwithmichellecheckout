@@ -211,6 +211,9 @@
   // ── Helpers ──────────────────────────────────────────────────────────────
 
   function parseMarkdown(text) {
+    // Strip any lead tokens that leaked through (safety net)
+    text = text.replace(/<<LEAD:[^>]+>>/g, "").trim();
+
     return text
       // Escape HTML first to prevent XSS
       .replace(/&/g, "&amp;")
@@ -220,8 +223,14 @@
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       // Italic: *text*
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
-      // Inline links: [label](url) — allow relative paths like event.html
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:inherit;text-decoration:underline;" target="_blank">$1</a>')
+      // Links: [label](url) — internal pages open same tab, external open new tab
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_, label, url) {
+        const isExternal = /^https?:\/\//i.test(url);
+        const attrs = isExternal
+          ? 'target="_blank" rel="noopener noreferrer"'
+          : '';
+        return `<a href="${url}" style="color:inherit;font-weight:600;text-decoration:underline;" ${attrs}>${label}</a>`;
+      })
       // Line breaks
       .replace(/\n/g, "<br>");
   }
