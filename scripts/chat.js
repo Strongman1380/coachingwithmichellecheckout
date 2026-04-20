@@ -3,6 +3,9 @@
 (function () {
   const CHAT_URL =
     "https://us-central1-brandonhinrichs.cloudfunctions.net/chat";
+  const GHL_URL =
+    "https://us-central1-brandonhinrichs.cloudfunctions.net/ghlContact";
+  let leadCaptured = false;
 
   // ── Inject HTML ──────────────────────────────────────────────────────────
 
@@ -207,10 +210,30 @@
 
   // ── Helpers ──────────────────────────────────────────────────────────────
 
+  function parseMarkdown(text) {
+    return text
+      // Escape HTML first to prevent XSS
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      // Bold: **text**
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      // Italic: *text*
+      .replace(/\*(.+?)\*/g, "<em>$1</em>")
+      // Inline links: [label](url) — allow relative paths like event.html
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:inherit;text-decoration:underline;" target="_blank">$1</a>')
+      // Line breaks
+      .replace(/\n/g, "<br>");
+  }
+
   function appendMessage(role, text) {
     const div = document.createElement("div");
     div.className = "cwm-msg " + (role === "user" ? "user" : "ai");
-    div.textContent = text;
+    if (role === "user") {
+      div.textContent = text;
+    } else {
+      div.innerHTML = parseMarkdown(text);
+    }
     messagesEl.appendChild(div);
     messagesEl.scrollTop = messagesEl.scrollHeight;
     return div;
@@ -270,7 +293,27 @@
       const data = await res.json();
       hideTyping();
 
-      const reply = data.reply || data.error || "Sorry, I couldn't get a response. Please try again.";
+      let reply = data.reply || data.error || "Sorry, I couldn't get a response. Please try again.";
+
+      // Detect and strip lead capture token
+      const leadMatch = reply.match(/<<LEAD:firstName=([^,]+),email=([^>]+)>>/);
+      if (leadMatch && !leadCaptured) {
+        leadCaptured = true;
+        const firstName = leadMatch[1].trim();
+        const email = leadMatch[2].trim();
+        reply = reply.replace(/<<LEAD:[^>]+>>/, "").trim();
+        // Send to GHL silently
+        fetch(GHL_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ firstName, email, source: "Website Chat", tags: ["chat-lead"] }),
+        }).catch(() => {});
+        // Show confirmation bubble after a short delay
+        setTimeout(() => {
+          appendMessage("assistant", "✓ You're on Michelle's list! She'll be in touch soon.");
+        }, 800);
+      }
+
       appendMessage("assistant", reply);
       messages.push({ role: "assistant", content: reply });
     } catch {
