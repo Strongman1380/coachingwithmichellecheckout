@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -22,12 +22,12 @@
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                 <li class="has-dropdown">
                     <a href="products.html" class="active">The Ecosystem <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-content">
                         <a href="masterclass.html">Free Training: The Masterclass</a>
-                        <a href="program.html">The Program</a>
+                        <a href="program.html">From Survival to Sovereignty</a>
                         <a href="vip.html">Sovereign VIP</a>
                         <a href="intensive.html">Accelerator: Private Intensive</a>
                         <a href="post-divorce-reset.html">Workshop: Post-Divorce Reset</a>
@@ -40,9 +40,9 @@
             </ul>
         </nav>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-threads"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -79,23 +79,23 @@
                     </ul>
                 <div class="product-card-actions">
                     <a href="masterclass.html" class="btn-enroll">View Details</a>
-                    <a href="book.html" class="btn-learn">Book Your Discovery Call</a>
+                    <a href="event.html" class="btn-learn">Check Event Board</a>
                 </div>
                 </div>
             </div>
 
             <!-- Tier 2: Level 2 -->
-            <div class="product-card featured" style="border: 2px solid var(--primary);">
-                <div style="background: var(--primary); color: #fff; text-align: center; padding: 10px; font-size: 0.75rem; letter-spacing: 1px; font-weight: 700;">TRANSFORMATION INTENSIVE</div>
+            <div class="product-card featured">
+                <div class="featured-banner">TRANSFORMATION INTENSIVE</div>
                 <div class="product-card-top">
-                    <p class="product-label">12-WEEK INTENSIVE</p>
-                    <h3>The Program</h3>
-                    <p class="tagline">The Ascension Framework in Full Application</p>
+                    <p class="product-label">6-WEEK INTENSIVE</p>
+                    <h3>From Survival to Sovereignty</h3>
+                    <p class="tagline">Six-Week Intensive Manifestation Training</p>
                 </div>
                 <div class="product-card-body">
-                    <p>A comprehensive intensive designed for women ready to genuinely shift how they operate. Structured curriculum, weekly accountability, and real-time coaching.</p>
+                    <p>A six-week intensive manifestation training for women ready to genuinely shift how they operate. Structured curriculum, weekly accountability, and real-time coaching.</p>
                     <ul class="product-features">
-                        <li><i class="fa-solid fa-check"></i> 12-week comprehensive rewiring</li>
+                        <li><i class="fa-solid fa-check"></i> 6-week comprehensive rewiring</li>
                         <li><i class="fa-solid fa-check"></i> Weekly group coaching calls</li>
                         <li><i class="fa-solid fa-check"></i> <strong>Bonus:</strong> 1 Private Coaching Session</li>
                         <li><i class="fa-solid fa-check"></i> Real-time pattern audits</li>
@@ -184,7 +184,7 @@
                     <div class="guide-step-num">2</div>
                     <div class="guide-step-content">
                         <h4>If you're ready for deep, structural transformation...</h4>
-                        <p>Join <strong>The Program</strong> (Level 2). This 12-week intensive is where the identity rewiring happens. This is for women who are done with survival mode and ready to rebuild how they operate.</p>
+                        <p>Join <strong>From Survival to Sovereignty</strong> (Level 2). This six-week intensive manifestation training is where the identity rewiring happens. This is for women who are done with survival mode and ready to rebuild how they operate.</p>
                     </div>
                 </div>
                 <div class="guide-step">
@@ -221,7 +221,7 @@
                     <h4 class="footer-subtitle">Supportive Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                         <li><a href="products.html">The Ecosystem</a></li>
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
@@ -255,5 +255,6 @@
             }
         });
     </script>
+    <script src="scripts/chat.js"></script>
 </body>
 </html>

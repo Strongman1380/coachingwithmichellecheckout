@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=12">
     <style>
         .error-section {
             min-height: 70vh;
@@ -59,12 +59,12 @@
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                 <li class="has-dropdown">
                     <a href="products.html">The Ecosystem <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-content">
                         <a href="masterclass.html">Free Training: The Masterclass</a>
-                        <a href="program.html">The Program</a>
+                        <a href="program.html">From Survival to Sovereignty</a>
                         <a href="vip.html">Sovereign VIP</a>
                         <a href="intensive.html">Accelerator: Private Intensive</a>
                         <a href="post-divorce-reset.html">Workshop: Post-Divorce Reset</a>
@@ -77,9 +77,9 @@
             </ul>
         </nav>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-threads"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -111,7 +111,7 @@
                     <h4 class="footer-subtitle">Supportive Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
@@ -126,5 +126,7 @@
     </footer>
 
     <script src="scripts/main.js?v=5"></script>
+    <button class="chat-btn"><i class="fa-solid fa-comment"></i> Let's Connect</button>
+    <script src="scripts/chat.js"></script>
 </body>
 </html>

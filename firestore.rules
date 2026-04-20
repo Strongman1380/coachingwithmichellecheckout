@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Leads collection:
+    // Anyone can create (public lead capture forms + chat widget)
+    // Only authenticated users (admins) can read, update, delete
+    match /leads/{leadId} {
+      allow create: if true;
+      allow read, list, update, delete: if request.auth != null;
+    }
+  }
+}

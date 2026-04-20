@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -22,12 +22,12 @@
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                 <li class="has-dropdown">
                     <a href="products.html">The Ecosystem <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-content">
                         <a href="masterclass.html">Free Training: The Masterclass</a>
-                        <a href="program.html">The Program</a>
+                        <a href="program.html">From Survival to Sovereignty</a>
                         <a href="vip.html">Sovereign VIP</a>
                         <a href="intensive.html">Accelerator: Private Intensive</a>
                         <a href="post-divorce-reset.html">Workshop: Post-Divorce Reset</a>
@@ -40,9 +40,9 @@
             </ul>
         </nav>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-threads"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -168,7 +168,7 @@
     <section class="section-padding" style="background: var(--bg-main);">
         <div class="container">
             <div style="text-align:center; margin-bottom: 60px;">
-                <span class="eyebrow" style="display:block; text-align:center;">Choose Your Path</span>
+                <span class="eyebrow eyebrow--center">Choose Your Path</span>
                 <h2 class="section-title" style="display: block;">The Programs</h2>
             </div>
             <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
@@ -183,20 +183,20 @@
                         <p>Join Jocelyn for a live training where she walks you through The Ascension Framework and shows you exactly how it applies to your life.</p>
                         <div class="product-card-actions">
                             <a href="masterclass.html" class="btn-enroll">Learn More</a>
-                            <a href="book.html" class="btn-learn">Book Your Discovery Call</a>
+                            <a href="event.html" class="btn-learn">Check Event Board</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- The Program -->
-                <div class="product-card featured" style="border: 2px solid var(--primary);">
-                    <div style="background: var(--primary); color: #fff; text-align: center; padding: 5px; font-size: 0.70rem; font-weight: 700;">THE ASCENSION FRAMEWORK IN ACTION</div>
+                <div class="product-card featured">
+                    <div class="featured-banner">THE ASCENSION FRAMEWORK IN ACTION</div>
                     <div class="product-card-top">
-                        <p class="product-label">12-WEEK INTENSIVE</p>
-                        <h3>The Program</h3>
+                        <p class="product-label">6-WEEK INTENSIVE</p>
+                        <h3>From Survival to Sovereignty</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>12 weeks of structured identity rewiring and nervous system work. This is where all four pillars of the Ascension Framework come alive.</p>
+                        <p>A six-week intensive manifestation training designed to move you from survival mode into sovereign living — with structured curriculum, real-time coaching, and full accountability.</p>
                         <div class="product-card-actions">
                             <a href="program.html" class="btn-enroll">View Program</a>
                             <a href="book.html" class="btn-learn">Book Your Discovery Call</a>
@@ -244,7 +244,7 @@
     <!-- Newsletter Section -->
     <section class="newsletter-section">
         <div class="newsletter-container">
-            <span class="eyebrow" style="color: rgba(255,255,255,0.55);">Stay Connected</span>
+            <span class="eyebrow eyebrow--light">Stay Connected</span>
             <h2 class="newsletter-title">Stay Grounded &amp; Inspired</h2>
             <p class="newsletter-desc">Join women who are rebuilding with intention. Receive coaching insights, resources, and encouragement — straight to your inbox.</p>
             <form class="newsletter-form" onsubmit="return false;">
@@ -270,7 +270,7 @@
                     <h4 class="footer-subtitle">Supportive Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                         <li><a href="products.html">The Ecosystem</a></li>
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
@@ -289,5 +289,6 @@
     </button>
 
     <script src="scripts/main.js?v=5"></script>
+    <script src="scripts/chat.js"></script>
 </body>
 </html>

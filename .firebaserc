@@ -1,7 +1,15 @@
 {
   "projects": {
-    "default": "coaching-with-michelle"
+    "default": "brandonhinrichs"
   },
-  "targets": {},
+  "targets": {
+    "brandonhinrichs": {
+      "hosting": {
+        "coaching-with-michelle-app": [
+          "coaching-with-michelle-app"
+        ]
+      }
+    }
+  },
   "etags": {}
 }

@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "target": "coaching-with-michelle-app",
     "public": ".",
     "ignore": [
       "firebase.json",

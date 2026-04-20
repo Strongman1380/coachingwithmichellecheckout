@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -22,12 +22,12 @@
         <nav class="main-nav">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                 <li class="has-dropdown">
                     <a href="products.html">The Ecosystem <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a>
                     <div class="dropdown-content">
                         <a href="masterclass.html">Free Training: The Masterclass</a>
-                        <a href="program.html">The Program</a>
+                        <a href="program.html">From Survival to Sovereignty</a>
                         <a href="vip.html">Sovereign VIP</a>
                         <a href="intensive.html">Accelerator: Private Intensive</a>
                         <a href="post-divorce-reset.html">Workshop: Post-Divorce Reset</a>
@@ -40,9 +40,9 @@
             </ul>
         </nav>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-threads"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -86,14 +86,27 @@
         </div>
     </section>
 
-    <!-- Enrollment CTA -->
+    <!-- Enrollment CTA / Ticket Tailor Widget -->
     <section id="accelerate" class="values-section" style="background: var(--bg-main); text-align: center;">
         <div class="container">
-            <div style="max-width: 700px; margin: 0 auto;">
-                <h2 class="section-title" style="margin-bottom: 20px;">Ready to attend the free training?</h2>
-                <p class="body-text" style="margin-bottom: 40px;">Book a discovery call with Jocelyn to find out when the next Masterclass is running and whether it's the right first step for you.</p>
-                <a href="book.html" class="btn-primary" style="font-size: 1.05rem; padding: 16px 40px;">Book Your Discovery Call</a>
+            <h2 class="section-title" style="margin-bottom: 12px;">Ready to attend the free training?</h2>
+            <p class="body-text" style="margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Grab your spot below — seats are limited. Choose the date that works for you.</p>
+
+            <!-- Ticket Tailor Widget -->
+            <div class="tt-widget">
+                <div class="tt-widget-fallback">
+                    <p><a href="https://www.tickettailor.com/all-tickets/coachingwithmichelle/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Click here to buy tickets</a><br><small><a href="https://www.tickettailor.com?rf=wdg_306480" class="tt-widget-powered">Sell tickets online with Ticket Tailor</a></small></p>
+                </div>
+                <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
+                    data-url="https://www.tickettailor.com/all-tickets/coachingwithmichelle/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
+                    data-type="inline"
+                    data-inline-minimal="true"
+                    data-inline-show-logo="false"
+                    data-inline-bg-fill="false"
+                    data-inline-inherit-ref-from-url-param=""
+                    data-inline-ref="website_widget"></script>
             </div>
+            <!-- End of Ticket Tailor Widget -->
         </div>
     </section>
 
@@ -125,7 +138,7 @@
                     <h4 class="footer-subtitle">Supportive Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li class="has-dropdown"><a href="about.html">About <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 5px;"></i></a><div class="dropdown-content"><a href="about.html">About Michelle</a><a href="event.html">Events</a></div></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
@@ -144,5 +157,6 @@
     </button>
 
     <script src="scripts/main.js?v=5"></script>
+    <script src="scripts/chat.js"></script>
 </body>
 </html>

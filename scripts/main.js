@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.main-header');
     const mainNav = document.querySelector('.main-nav');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // ── 1. Sticky Header ──────────────────────────────────────────────
     if (header) {
@@ -100,24 +101,118 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ── 5. Scroll Reveal Animations ───────────────────────────────────
-    const revealElements = document.querySelectorAll(
-        '.product-card, .value-card, .guide-step, .feature-card'
-    );
-    const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    observer.unobserve(entry.target);
-                }
+    const interactivePanels = [
+        '.hero-glass-card',
+        '.ecosystem-card',
+        '.newsletter-container',
+        '.book-form-wrap',
+        '.book-testimonial',
+        '.faq-item',
+        '.mission-quote',
+        '.value-card',
+        '.feature-card',
+        '.product-card',
+        '.guide-step',
+        '.week-card',
+        '.price-card',
+        '.invitation-card',
+        '.vip-tier-card',
+        '.profound-card',
+        '.legal-toc',
+        '.legal-section',
+        '.legal-contact-box',
+        '.event-card',
+        '.register-card',
+        '.expect-item',
+        '.program-card',
+        '.checkout-gate-card'
+    ];
+    const interactiveMedia = [
+        '.bio-photo-wrap',
+        '.ecosystem-image-wrap',
+        '.footer-banner-image',
+        '.hero-image'
+    ];
+    const interactiveInline = [
+        '.payment-option label',
+        '.support-item',
+        '.legal-toc a',
+        '.expect-list li',
+        '.trust-item'
+    ];
+
+    const applyClassToSelectors = (selectors, className) => {
+        selectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(element => {
+                element.classList.add(className);
             });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-    revealElements.forEach(el => {
-        el.classList.add('reveal-on-scroll');
-        revealObserver.observe(el);
+        });
+    };
+
+    applyClassToSelectors(interactivePanels, 'interactive-panel');
+    applyClassToSelectors(interactiveMedia, 'interactive-media');
+    applyClassToSelectors(interactiveInline, 'interactive-inline');
+
+    const revealSelectors = [
+        '.page-hero > .container > *',
+        '.hero-content > *',
+        '.support-item',
+        '.hero-glass-card',
+        '.ecosystem-card',
+        '.ecosystem-step',
+        '.product-card',
+        '.value-card',
+        '.guide-step',
+        '.feature-card',
+        '.bio-photo-wrap',
+        '.bio-text > *',
+        '.newsletter-container > *',
+        '.book-info > *',
+        '.book-form-wrap',
+        '.expect-list li',
+        '.trust-item',
+        '.week-card',
+        '.price-card',
+        '.faq-item',
+        '.invitation-card',
+        '.vip-tier-card',
+        '.mission-quote',
+        '.cta-banner > *',
+        '.event-card',
+        '.register-card',
+        '.expect-item',
+        '.legal-toc',
+        '.legal-section',
+        '.program-card',
+        '.checkout-gate-card'
+    ];
+
+    const revealElements = new Set();
+    revealSelectors.forEach(selector => {
+        document.querySelectorAll(selector).forEach(element => revealElements.add(element));
     });
+
+    if (prefersReducedMotion) {
+        revealElements.forEach(element => element.classList.add('revealed'));
+    } else {
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-on-scroll', 'revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+        );
+
+        revealElements.forEach((element, index) => {
+            element.classList.add('reveal-on-scroll');
+            element.style.transitionDelay = `${Math.min(index % 6, 5) * 0.06}s`;
+            revealObserver.observe(element);
+        });
+    }
 
     // ── 6. Smooth Scrolling ───────────────────────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

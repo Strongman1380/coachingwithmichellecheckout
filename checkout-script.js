@@ -26,7 +26,7 @@ function initializeCheckoutButtons() {
             this.disabled = true;
 
             // Call the Stripe Firebase Cloud Function
-            const functionUrl = 'https://us-central1-coaching-with-michelle.cloudfunctions.net/createCheckoutSession';
+            const functionUrl = 'https://us-central1-brandonhinrichs.cloudfunctions.net/createCheckoutSession';
             
             fetch(functionUrl, {
                 method: 'POST',
@@ -40,13 +40,17 @@ function initializeCheckoutButtons() {
                     }
                 })
             })
-            .then(response => response.json())
+            .then(async response => {
+                const data = await response.json();
+
+                if (!response.ok || data.error) {
+                    throw new Error(data?.error?.message || `Checkout request failed (${response.status})`);
+                }
+
+                return data;
+            })
             .then(data => {
                 // Firebase onCall endpoints wrap response in `result`
-                if (data.error) {
-                    throw new Error(data.error.message || 'Unknown server error');
-                }
-                
                 const url = data.result ? data.result.url : null;
                 if (!url) {
                     throw new Error('No checkout URL was returned. Please try again later.');
