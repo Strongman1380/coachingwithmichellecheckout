@@ -2,12 +2,54 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    function isAdmin() {
+      return request.auth != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
     // Leads collection:
     // Anyone can create (public lead capture forms + chat widget)
     // Only authenticated users (admins) can read, update, delete
     match /leads/{leadId} {
       allow create: if true;
       allow read, list, update, delete: if request.auth != null;
+    }
+
+    // Community Users
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if request.auth.uid == userId;
+      allow update: if request.auth.uid == userId || isAdmin();
+    }
+
+    // Community Posts
+    match /posts/{postId} {
+      allow read: if isSignedIn();
+      allow create, update, delete: if isAdmin();
+
+      // Comments
+      match /comments/{commentId} {
+        allow read: if isSignedIn();
+        allow create: if isSignedIn();
+        allow delete: if request.auth.uid == resource.data.authorId || isAdmin();
+      }
+    }
+
+    // Community Reactions
+    match /reactions/{reactionId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() &&
+        reactionId == request.auth.uid + '_' + request.resource.data.postId;
+    }
+
+    // Community Notifications
+    match /notifications/{notifId} {
+      allow read: if isSignedIn() && resource.data.recipientId == request.auth.uid;
+      allow update: if isSignedIn() && resource.data.recipientId == request.auth.uid;
     }
   }
 }

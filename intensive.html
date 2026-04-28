@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
 </head>
 <body>
 
@@ -37,12 +37,20 @@
                 <li><a href="book.html">Book Your Call</a></li>
                 <li><a href="checkout.html">Checkout</a></li>
                 <li><a href="legal.html">Legal</a></li>
+                <li><a href="https://jocelyn757.substack.com" target="_blank" class="nav-subscribe-link">Subscribe to our blog</a></li>
             </ul>
+                <div class="mobile-social-icons" style="display:none;">
+            <a href="https://www.instagram.com/lemke.jocelyn/" target="_blank" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coachingwithmichellellc/" target="_blank" class="brand-fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/g/1AvSbNNytS/" target="_blank" class="brand-group" title="Facebook Group"><i class="fa-solid fa-user-group"></i></a>
+            <a href="https://www.tiktok.com/@jocelynlemke" target="_blank" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
         </nav>
         <div class="social-icons">
-            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/lemke.jocelyn/" target="_blank" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coachingwithmichellellc/" target="_blank" class="brand-fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/g/1AvSbNNytS/" target="_blank" class="brand-group" title="Facebook Group"><i class="fa-solid fa-user-group"></i></a>
+            <a href="https://www.tiktok.com/@jocelynlemke" target="_blank" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -76,8 +84,30 @@
                         <li><i class="fa-solid fa-bolt"></i> <strong>Rapid Regulation:</strong> Learn the specific nervous system tools that work for your biology.</li>
                     </ul>
                     
-                    <div style="margin-top: 40px; padding: 25px; background: var(--surface); border-radius: 12px;">
-                        <a href="book.html" class="btn-primary" style="display: block; text-align: center;">Book Your Discovery Call</a>
+                    <!-- Pricing -->
+                    <div style="margin-top: 40px;">
+                        <h4 style="color:var(--primary);margin-bottom:20px;">Investment</h4>
+                        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+
+                            <div style="flex:1;min-width:220px;background:#fff;border-radius:14px;padding:28px 22px;box-shadow:0 4px 20px rgba(47,93,98,0.1);border:2px solid var(--primary);text-align:center;">
+                                <p style="font-size:0.65rem;letter-spacing:3px;color:var(--secondary);font-weight:700;margin:0 0 8px;text-transform:uppercase;">Best Value</p>
+                                <h4 style="font-size:1.4rem;font-weight:700;color:var(--primary);margin:0 0 18px;">Pay in Full</h4>
+                                <a href="book.html" class="btn-primary" style="display:block;width:100%;font-family:inherit;cursor:pointer;border:none;font-size:0.9rem;text-decoration:none;">
+                                    Book Your Discovery Call
+                                </a>
+                            </div>
+
+                            <div style="flex:1;min-width:220px;background:#fff;border-radius:14px;padding:28px 22px;box-shadow:0 4px 20px rgba(47,93,98,0.07);border:2px solid rgba(47,93,98,0.15);text-align:center;">
+                                <p style="font-size:0.65rem;letter-spacing:3px;color:var(--text-light);font-weight:700;margin:0 0 8px;text-transform:uppercase;">2 Payments</p>
+                                <h4 style="font-size:1.4rem;font-weight:700;color:var(--primary);margin:0 0 18px;">Split in Two</h4>
+                                <a href="book.html" class="btn-primary" style="display:block;width:100%;font-family:inherit;cursor:pointer;border:none;background:var(--secondary);font-size:0.9rem;text-decoration:none;">
+                                    Book Your Discovery Call
+                                </a>
+                            </div>
+
+                        </div>
+                        <p id="intensive-checkout-msg" style="display:none;margin-top:14px;color:#e74c3c;font-size:0.88rem;"></p>
+                        <p style="font-size:0.78rem;color:var(--text-light);margin-top:12px;text-align:center;">Questions first? <a href="book.html" style="color:var(--secondary);">Book a discovery call</a></p>
                     </div>
                 </div>
             </div>
@@ -105,6 +135,7 @@
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
                 <li><a href="legal.html">Legal</a></li>
+                <li><a href="https://jocelyn757.substack.com" target="_blank" class="nav-subscribe-link">Subscribe to our blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-right">
@@ -118,7 +149,39 @@
         <i class="fa-solid fa-comment"></i> Let's Connect
     </button>
 
-    <script src="scripts/main.js?v=5"></script>
+    <script src="scripts/main.js?v=6"></script>
     <script src="scripts/chat.js"></script>
+    <script>
+    (function() {
+        const CHECKOUT_URL = 'https://us-central1-brandonhinrichs.cloudfunctions.net/createCheckoutSession';
+        document.querySelectorAll('.intensive-checkout-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const paymentId = this.dataset.paymentId;
+                const original = this.textContent;
+                this.textContent = 'Loading…';
+                this.disabled = true;
+                document.getElementById('intensive-checkout-msg').style.display = 'none';
+                fetch(CHECKOUT_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ data: { paymentId: paymentId, origin: window.location.origin } })
+                })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    const url = data.result ? data.result.url : null;
+                    if (!url) throw new Error('No checkout URL returned.');
+                    window.location.href = url;
+                })
+                .catch(function(err) {
+                    const msg = document.getElementById('intensive-checkout-msg');
+                    msg.textContent = 'Something went wrong: ' + err.message;
+                    msg.style.display = 'block';
+                    btn.textContent = original;
+                    btn.disabled = false;
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>

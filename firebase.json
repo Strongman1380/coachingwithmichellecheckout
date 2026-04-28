@@ -5,17 +5,41 @@
   "hosting": {
     "target": "coaching-with-michelle-app",
     "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
     "ignore": [
       "firebase.json",
       ".firebaserc",
       "**/.*",
       "**/node_modules/**",
       "functions/**",
+      "community/src/**",
+      "community/public/**",
+      "community/dist/**",
+      "community/index.html",
+      "community/package*.json",
+      "community/vite.config.js",
+      "community/eslint.config.js",
+      "community/postcss.config.js",
+      "community/tailwind.config.js",
+      "community/README.md",
       "script.js",
       "screenshot-*.png",
       "cards-*.png"
     ],
     "rewrites": [
+      {
+        "source": "/events",
+        "destination": "/event.html"
+      },
+      {
+        "source": "/community",
+        "destination": "/community/deploy.html"
+      },
+      {
+        "source": "/community/**",
+        "destination": "/community/deploy.html"
+      },
       {
         "source": "**",
         "destination": "/404.html"

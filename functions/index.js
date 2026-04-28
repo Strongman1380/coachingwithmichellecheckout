@@ -2,6 +2,8 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const stripe = require("stripe");
 const Anthropic = require("@anthropic-ai/sdk");
+const nodemailer = require("nodemailer");
+const { google } = require("googleapis");
 
 admin.initializeApp();
 
@@ -22,7 +24,88 @@ const PROGRAMS = {
   "masterclass-vip":          { name: "Masterclass VIP Ticket", amount: 9700, mode: "payment" }
 };
 
-// ── Go High Level ───────────────────────────────────────────────────────────
+// ── Email transport ──────────────────────────────────────────────────────────
+
+function createTransport() {
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.MAIL_USER,
+      pass: process.env.MAIL_PASS,
+    },
+  });
+}
+
+async function sendLeadEmail({ firstName, email, source, tags }) {
+  const transporter = createTransport();
+  const tagList = Array.isArray(tags) ? tags.join(", ") : (tags || "");
+  await transporter.sendMail({
+    from: process.env.MAIL_USER,
+    to: "jocelyn@coachingwithmichelle.org",
+    subject: `New lead: ${firstName || email} (${source || "Website"})`,
+    text: [
+      `Name:   ${firstName || "(not provided)"}`,
+      `Email:  ${email}`,
+      `Source: ${source || "Website"}`,
+      `Tags:   ${tagList || "(none)"}`,
+    ].join("\n"),
+  });
+}
+
+// ── Google Sheets ────────────────────────────────────────────────────────────
+
+const LEADS_SHEET_ID = "1Ik-vKVMf4eTNWs3XkWuxwcwRwLnrL8arpmPNbHquA7Y";
+const LEADS_SHEET_TAB = "Website Leads";
+
+async function appendLeadToSheet({ firstName, email, source, tags }) {
+  const keyJson = process.env.GOOGLE_SERVICE_ACCOUNT_KEY;
+  if (!keyJson) return; // silently skip if not configured
+
+  const credentials = JSON.parse(keyJson);
+  const auth = new google.auth.GoogleAuth({
+    credentials,
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  const sheets = google.sheets({ version: "v4", auth });
+
+  // Create the tab if it doesn't exist yet
+  const spreadsheet = await sheets.spreadsheets.get({ spreadsheetId: LEADS_SHEET_ID });
+  const tabExists = spreadsheet.data.sheets.some(
+    (s) => s.properties.title === LEADS_SHEET_TAB
+  );
+  if (!tabExists) {
+    await sheets.spreadsheets.batchUpdate({
+      spreadsheetId: LEADS_SHEET_ID,
+      requestBody: {
+        requests: [{ addSheet: { properties: { title: LEADS_SHEET_TAB } } }],
+      },
+    });
+    // Write header row
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: LEADS_SHEET_ID,
+      range: `${LEADS_SHEET_TAB}!A1:E1`,
+      valueInputOption: "USER_ENTERED",
+      requestBody: {
+        values: [["Timestamp", "First Name", "Email", "Source", "Tags"]],
+      },
+    });
+  }
+
+  const tagList = Array.isArray(tags) ? tags.join(", ") : (tags || "");
+  const timestamp = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: LEADS_SHEET_ID,
+    range: `${LEADS_SHEET_TAB}!A:E`,
+    valueInputOption: "USER_ENTERED",
+    requestBody: {
+      values: [[timestamp, firstName || "", email, source || "Website", tagList]],
+    },
+  });
+}
+
+// ── Lead capture ─────────────────────────────────────────────────────────────
 
 exports.ghlContact = functions.https.onRequest(async (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
@@ -32,38 +115,30 @@ exports.ghlContact = functions.https.onRequest(async (req, res) => {
   if (req.method === "OPTIONS") { res.status(204).send(""); return; }
   if (req.method !== "POST") { res.status(405).json({ error: "Method not allowed." }); return; }
 
-  const ghlKey = process.env.GHL_API_KEY;
-  if (!ghlKey) { res.status(500).json({ error: "GHL not configured." }); return; }
-
   const { firstName, email, source, tags } = req.body;
   if (!email) { res.status(400).json({ error: "Email is required." }); return; }
 
   try {
-    const response = await fetch("https://services.leadconnectorhq.com/contacts/", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${ghlKey}`,
-        "Version": "2021-07-28",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        firstName: firstName || "",
-        email,
-        source: source || "Website",
-        tags: tags || ["website-lead"],
-      }),
+    // Save to Firestore
+    await admin.firestore().collection("leads").add({
+      name:      firstName || "",
+      email:     email.toLowerCase(),
+      source:    source || "Website",
+      tags:      tags || [],
+      timestamp: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: new Date().toISOString(),
     });
 
-    const data = await response.json();
-    if (!response.ok) {
-      console.error("GHL error:", data);
-      res.status(500).json({ error: "GHL error", detail: data });
-      return;
-    }
-    res.json({ success: true, contactId: data.contact?.id });
+    // Email Jocelyn + log to sheet (non-blocking so one failure doesn't kill the other)
+    await Promise.allSettled([
+      sendLeadEmail({ firstName, email, source, tags }),
+      appendLeadToSheet({ firstName, email, source, tags }),
+    ]);
+
+    res.json({ success: true });
   } catch (err) {
-    console.error("GHL fetch error:", err);
-    res.status(500).json({ error: "Failed to create GHL contact." });
+    console.error("Lead capture error:", err);
+    res.status(500).json({ error: "Failed to save lead." });
   }
 });
 
@@ -216,28 +291,11 @@ async function extractAndSaveLead(replyText) {
     console.error("Firestore lead save error:", err);
   }
 
-  // Also push to GHL if configured
-  const ghlKey = process.env.GHL_API_KEY;
-  if (ghlKey) {
-    try {
-      await fetch("https://services.leadconnectorhq.com/contacts/", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${ghlKey}`,
-          "Version": "2021-07-28",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName,
-          email,
-          source: "AI Chat Widget",
-          tags: ["ai-chat", "website-lead"],
-        }),
-      });
-    } catch (err) {
-      console.error("GHL lead save error:", err);
-    }
-  }
+  // Email Jocelyn + log to sheet
+  await Promise.allSettled([
+    sendLeadEmail({ firstName, email, source: "AI Chat Widget", tags: ["ai-chat", "website-lead"] }),
+    appendLeadToSheet({ firstName, email, source: "AI Chat Widget", tags: ["ai-chat", "website-lead"] }),
+  ]);
 
   return { firstName, email };
 }
@@ -344,5 +402,113 @@ exports.createCheckoutSession = functions.https.onCall(async (data, context) => 
   } catch (err) {
     console.error("Stripe error:", err);
     throw new functions.https.HttpsError("internal", err.message);
+  }
+});
+
+// ── Community Push Notifications ─────────────────────────────────────────────
+
+const { onDocumentCreated } = require("firebase-functions/v2/firestore");
+const { onCall, HttpsError } = require("firebase-functions/v2/https");
+
+// Trigger 1: New post → notify all opted-in members
+exports.onNewPost = onDocumentCreated("posts/{postId}", async (event) => {
+  const post = event.data.data();
+  // Skip if scheduled for the future
+  if (post.scheduledAt && post.scheduledAt.toDate() > new Date()) return;
+
+  const usersSnap = await admin.firestore()
+    .collection("users")
+    .where("notificationsEnabled", "==", true)
+    .where("fcmToken", "!=", null)
+    .get();
+
+  const tokens = usersSnap.docs.map((d) => d.data().fcmToken).filter(Boolean);
+  if (tokens.length === 0) return;
+
+  try {
+    await admin.messaging().sendEachForMulticast({
+      tokens,
+      notification: {
+        title: `New from ${post.authorName}`,
+        body: post.content.substring(0, 120),
+      },
+      webpush: {
+        fcmOptions: { link: "/community" },
+      },
+    });
+  } catch (err) {
+    console.error("FCM send error (onNewPost):", err);
+  }
+});
+
+// Trigger 2: Comment reply → notify the original commenter
+exports.onNewComment = onDocumentCreated("posts/{postId}/comments/{commentId}", async (event) => {
+  const comment = event.data.data();
+  if (!comment.replyToId) return; // not a reply
+
+  const userDoc = await admin.firestore()
+    .collection("users")
+    .doc(comment.replyToId)
+    .get();
+
+  if (!userDoc.exists) return;
+  const userData = userDoc.data();
+  if (!userData.fcmToken || !userData.notificationsEnabled) return;
+
+  try {
+    await admin.messaging().send({
+      token: userData.fcmToken,
+      notification: {
+        title: `${comment.authorName} replied to you`,
+        body: comment.content.substring(0, 100),
+      },
+      webpush: {
+        fcmOptions: { link: "/community" },
+      },
+    });
+  } catch (err) {
+    console.error("FCM send error (onNewComment):", err);
+  }
+});
+
+// Trigger 3: Manual broadcast (callable, admin only)
+exports.broadcastNotification = onCall(async (request) => {
+  if (!request.auth) {
+    throw new HttpsError("unauthenticated", "Must be signed in.");
+  }
+
+  const callerDoc = await admin.firestore()
+    .collection("users")
+    .doc(request.auth.uid)
+    .get();
+
+  if (!callerDoc.exists || callerDoc.data().role !== "admin") {
+    throw new HttpsError("permission-denied", "Admins only.");
+  }
+
+  const { title, body } = request.data;
+  if (!title || !body) {
+    throw new HttpsError("invalid-argument", "Title and body required.");
+  }
+
+  const usersSnap = await admin.firestore()
+    .collection("users")
+    .where("notificationsEnabled", "==", true)
+    .where("fcmToken", "!=", null)
+    .get();
+
+  const tokens = usersSnap.docs.map((d) => d.data().fcmToken).filter(Boolean);
+  if (tokens.length === 0) return { sent: 0 };
+
+  try {
+    const result = await admin.messaging().sendEachForMulticast({
+      tokens,
+      notification: { title, body },
+      webpush: { fcmOptions: { link: "/community" } },
+    });
+    return { sent: result.successCount };
+  } catch (err) {
+    console.error("Broadcast error:", err);
+    throw new HttpsError("internal", "Failed to send broadcast.");
   }
 });

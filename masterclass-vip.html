@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <style>
         .vip-hero {
             background: linear-gradient(135deg, var(--primary) 0%, #3a2d5c 100%);
@@ -135,12 +135,20 @@
                 <li><a href="book.html">Book Your Call</a></li>
                 <li><a href="checkout.html">Checkout</a></li>
                 <li><a href="legal.html">Legal</a></li>
+                <li><a href="https://jocelyn757.substack.com" target="_blank" class="nav-subscribe-link">Subscribe to our blog</a></li>
             </ul>
+                <div class="mobile-social-icons" style="display:none;">
+            <a href="https://www.instagram.com/lemke.jocelyn/" target="_blank" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coachingwithmichellellc/" target="_blank" class="brand-fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/g/1AvSbNNytS/" target="_blank" class="brand-group" title="Facebook Group"><i class="fa-solid fa-user-group"></i></a>
+            <a href="https://www.tiktok.com/@jocelynlemke" target="_blank" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
         </nav>
         <div class="social-icons">
-            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/lemke.jocelyn/" target="_blank" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coachingwithmichellellc/" target="_blank" class="brand-fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/g/1AvSbNNytS/" target="_blank" class="brand-group" title="Facebook Group"><i class="fa-solid fa-user-group"></i></a>
+            <a href="https://www.tiktok.com/@jocelynlemke" target="_blank" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -152,7 +160,7 @@
             <p class="hero-subtitle">You registered for the free Masterclass. Now go deeper. Stay for a full hour of live Q&amp;A — ask Jocelyn anything, get direct answers, and walk away knowing exactly what your next step is.</p>
             <div class="vip-price-badge">$97</div>
             <br>
-            <button class="vip-enroll-btn" id="vip-checkout-btn">Get Your VIP Ticket</button>
+            <button class="vip-enroll-btn" id="vip-checkout-btn">Upgrade to VIP</button>
             <p class="vip-note" style="color: rgba(255,255,255,0.6); margin-top: 14px;">One-time payment. Secure checkout via Stripe.</p>
         </div>
     </section>
@@ -208,7 +216,7 @@
                 <p class="product-label" style="color: var(--secondary); letter-spacing: 3px; margin-bottom: 14px;">LIMITED VIP SEATS</p>
                 <h2 style="color: var(--primary); margin-bottom: 18px;">Ready to go deeper?</h2>
                 <p class="body-text" style="margin-bottom: 32px;">Secure your VIP seat now. Availability is limited to keep the session intimate and high-value.</p>
-                <button class="checkout-btn" id="vip-checkout-btn-bottom" style="max-width: 340px; margin: 0 auto; display: block;">Get Your VIP Ticket — $97</button>
+                <button class="checkout-btn" id="vip-checkout-btn-bottom" style="max-width: 340px; margin: 0 auto; display: block;">Upgrade to VIP — $97</button>
                 <p class="vip-note">Secure checkout via Stripe. One-time payment.</p>
             </div>
         </div>
@@ -235,6 +243,7 @@
                         <li><a href="masterclass.html">The Masterclass</a></li>
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="legal.html">Legal</a></li>
+                <li><a href="https://jocelyn757.substack.com" target="_blank" class="nav-subscribe-link">Subscribe to our blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-right">
@@ -248,7 +257,7 @@
         <i class="fa-solid fa-comment"></i> Let's Connect
     </button>
 
-    <script src="scripts/main.js?v=5"></script>
+    <script src="scripts/main.js?v=6"></script>
     <script>
         // Firebase + Stripe checkout for Masterclass VIP Ticket
         (function () {
@@ -283,7 +292,7 @@
                 } catch (err) {
                     console.error('Checkout error:', err);
                     btn.disabled = false;
-                    btn.textContent = 'Get Your VIP Ticket';
+                    btn.textContent = 'Upgrade to VIP';
                     alert('Something went wrong. Please try again or contact us directly.');
                 }
             }

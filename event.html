@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <style>
         /* ── Event cards ── */
         .events-grid {
@@ -246,6 +246,83 @@
             .ticket-modal-header h2 { font-size: 1.25rem; }
         }
 
+        /* ── Registration confirmation ── */
+        #zoom-confirmation {
+            display: none;
+            background: var(--primary);
+            padding: 64px 0;
+            text-align: center;
+        }
+        #zoom-confirmation.show { display: block; }
+        .zoom-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 44px 40px;
+            max-width: 560px;
+            margin: 0 auto;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+        }
+        .zoom-check-icon {
+            width: 64px;
+            height: 64px;
+            background: #e8f4f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+        .zoom-card h2 { color: var(--primary); margin-bottom: 8px; font-size: 1.9rem; }
+        .zoom-card .zoom-event-info { color: var(--text-light); font-size: 0.9rem; margin-bottom: 28px; }
+        .zoom-link-block {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 24px 22px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .zoom-link-block .zoom-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--secondary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .zoom-link-block a {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            word-break: break-all;
+            text-decoration: none;
+        }
+        .zoom-link-block a:hover { text-decoration: underline; }
+        .zoom-link-block .zoom-meta {
+            color: var(--text-light);
+            font-size: 0.84rem;
+            margin-top: 12px;
+            line-height: 1.8;
+        }
+        .zoom-join-btn {
+            display: block;
+            background: var(--secondary);
+            color: #fff;
+            border-radius: 10px;
+            padding: 15px 24px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 4px;
+            transition: opacity 0.2s;
+        }
+        .zoom-join-btn:hover { opacity: 0.88; }
+        @media (max-width: 600px) {
+            .zoom-card { padding: 32px 22px; }
+        }
+
         /* ── No events placeholder ── */
         .no-events {
             background: var(--surface);
@@ -289,12 +366,20 @@
                 <li><a href="book.html">Book Your Call</a></li>
                 <li><a href="checkout.html">Checkout</a></li>
                 <li><a href="legal.html">Legal</a></li>
+                <li><a href="https://jocelyn757.substack.com" target="_blank" class="nav-subscribe-link">Subscribe to our blog</a></li>
             </ul>
+                <div class="mobile-social-icons" style="display:none;">
+            <a href="https://www.instagram.com/lemke.jocelyn/" target="_blank" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coachingwithmichellellc/" target="_blank" class="brand-fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/g/1AvSbNNytS/" target="_blank" class="brand-group" title="Facebook Group"><i class="fa-solid fa-user-group"></i></a>
+            <a href="https://www.tiktok.com/@jocelynlemke" target="_blank" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
         </nav>
         <div class="social-icons">
-            <a href="#" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="brand-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/lemke.jocelyn/" target="_blank" class="brand-ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coachingwithmichellellc/" target="_blank" class="brand-fb" title="Facebook Page"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/share/g/1AvSbNNytS/" target="_blank" class="brand-group" title="Facebook Group"><i class="fa-solid fa-user-group"></i></a>
+            <a href="https://www.tiktok.com/@jocelynlemke" target="_blank" class="brand-tt" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         </div>
     </header>
 
@@ -320,36 +405,18 @@
             <!-- ═══════════════════════════════════════════════════════
                  EVENT CARDS — update dates/times as needed
                  ═══════════════════════════════════════════════════════ -->
-            <div class="events-grid">
+            <div class="events-grid" style="display: none;">
 
-                <div class="event-card">
-                    <div class="event-card-header">
-                        <div class="event-date-badge">
-                            <i class="fa-regular fa-calendar"></i>
-                            APRIL 27, 2026
-                        </div>
-                        <h3>From Fine to Done: The Masterclass</h3>
-                        <p class="event-time"><i class="fa-regular fa-clock" style="margin-right:6px;"></i>10:00 AM – 2:00 PM &nbsp;·&nbsp; Online via Zoom</p>
-                    </div>
-                    <div class="event-card-body">
-                        <span class="event-tag free">FREE</span>
-                        <span class="event-tag vip">VIP Add-On Available</span>
-                        <p>See the framework. See yourself in it. A real training — not a pitch. Walk away with clarity on your patterns and your next step.</p>
-                        <button onclick="document.getElementById('ticket-modal').classList.add('open')" class="btn-primary" style="display:block;width:100%;text-align:center;border:none;cursor:pointer;font-family:inherit;">Reserve Your Spot</button>
-                    </div>
-                </div>
-
-                <!-- Add more event cards here as dates are confirmed -->
+                <!-- Add event cards here as dates are confirmed -->
 
             </div>
 
-            <!-- Shown when no events are scheduled — remove once cards are added
+            <!-- Shown when no events are scheduled -->
             <div class="no-events">
                 <i class="fa-regular fa-calendar-plus"></i>
-                <h3>New dates dropping soon</h3>
-                <p>Register below to be the first notified when the next Masterclass is announced. Spots fill quickly.</p>
+                <h3>Check back soon for more events</h3>
+                <p>Stay tuned for sign up</p>
             </div>
-            -->
         </div>
     </section>
 
@@ -366,24 +433,39 @@
                 </button>
             </div>
             <div class="ticket-modal-body">
-                <!-- Ticket Tailor Widget -->
-                <div class="tt-widget">
-                    <div class="tt-widget-fallback">
-                        <p><a href="https://www.tickettailor.com/all-tickets/coachingwithmichelle/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Click here to buy tickets</a></p>
-                    </div>
-                    <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
-                        data-url="https://www.tickettailor.com/all-tickets/coachingwithmichelle/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true"
-                        data-type="inline"
-                        data-inline-minimal="true"
-                        data-inline-show-logo="false"
-                        data-inline-bg-fill="false"
-                        data-inline-inherit-ref-from-url-param=""
-                        data-inline-ref="website_widget"></script>
-                </div>
-                <!-- End of Ticket Tailor Widget -->
+                <!-- Eventbrite Widget -->
+                <div id="eventbrite-widget-container-1987786507955"></div>
+                <!-- End Eventbrite Widget -->
             </div>
         </div>
     </div>
+
+    <!-- Registration Confirmation (shown after Eventbrite order complete) -->
+    <section id="zoom-confirmation">
+        <div class="container">
+            <div class="zoom-card">
+                <div class="zoom-check-icon"><i class="fa-solid fa-check"></i></div>
+                <h2>You're In!</h2>
+                <p class="zoom-event-info">Mon, April 27, 2026 &nbsp;·&nbsp; 10:00 AM – 2:00 PM CDT &nbsp;·&nbsp; Zoom</p>
+                <div class="zoom-link-block">
+                    <div class="zoom-label">Your Zoom Link</div>
+                    <a href="https://us06web.zoom.us/j/81792229758?pwd=haQtv2kB3bDnMF4Y5w1UZMdKQfdx5a.1" target="_blank">
+                        Join the Masterclass on Zoom
+                    </a>
+                    <div class="zoom-meta">
+                        Meeting ID: 817 9222 9758<br>
+                        Passcode: 729485
+                    </div>
+                </div>
+                <a href="https://us06web.zoom.us/j/81792229758?pwd=haQtv2kB3bDnMF4Y5w1UZMdKQfdx5a.1" target="_blank" class="zoom-join-btn">
+                    <i class="fa-brands fa-zoom" style="margin-right:8px;"></i> Join on Zoom
+                </a>
+                <p style="color: var(--text-light); font-size: 0.85rem; line-height: 1.7; margin-top: 20px; margin-bottom: 0;">
+                    Save this link — you'll also receive it in your confirmation email. We can't wait to see you there!
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- What to Expect -->
     <section class="section-padding" style="background: var(--surface);">
@@ -421,10 +503,10 @@
     <section class="section-padding" style="background: var(--primary); text-align: center;">
         <div class="container">
             <div style="max-width: 680px; margin: 0 auto;">
-                <p class="product-label" style="color: var(--secondary-light); letter-spacing: 3px; margin-bottom: 16px;">VIP ADD-ON — $97</p>
+                <p class="product-label" style="color: var(--secondary-light); letter-spacing: 3px; margin-bottom: 16px;">VIP ADD-ON</p>
                 <h2 style="color: #fff; margin-bottom: 18px;">Already registered? Upgrade to VIP.</h2>
-                <p style="color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.8; margin-bottom: 32px;">Stay for an extra hour of live Q&amp;A directly with Jocelyn after the Masterclass ends. Ask anything, go deeper, get clarity on your exact next step — for just $97.</p>
-                <a href="masterclass-vip.html" class="btn-primary" style="background: var(--secondary); font-size: 1.05rem; padding: 16px 40px;">Get Your VIP Ticket — $97</a>
+                <p style="color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.8; margin-bottom: 32px;">Stay for an extra hour of live Q&amp;A directly with Jocelyn after the Masterclass ends. Ask anything, go deeper, get clarity on your exact next step.</p>
+                <a href="book.html" class="btn-primary" style="background: var(--secondary); font-size: 1.05rem; padding: 16px 40px;">Book Your Discovery Call</a>
             </div>
         </div>
     </section>
@@ -450,6 +532,7 @@
                         <li><a href="products.html">The Ecosystem</a></li>
                         <li><a href="book.html">Book Your Call</a></li>
                         <li><a href="legal.html">Legal</a></li>
+                <li><a href="https://jocelyn757.substack.com" target="_blank" class="nav-subscribe-link">Subscribe to our blog</a></li>
                     </ul>
                 </div>
                 <div class="footer-right">
@@ -463,10 +546,41 @@
         <i class="fa-solid fa-comment"></i> Let's Connect
     </button>
 
-    <script src="scripts/main.js?v=5"></script>
+    <script src="scripts/main.js?v=6"></script>
     <script src="scripts/chat.js"></script>
+    <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
     <script>
-        // Close ticket modal when clicking the backdrop
+        // ── Zoom confirmation helper ──────────────────────────────────
+        function showZoomConfirmation() {
+            document.getElementById('ticket-modal').classList.remove('open');
+            var conf = document.getElementById('zoom-confirmation');
+            conf.classList.add('show');
+            setTimeout(function() {
+                conf.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 200);
+        }
+
+        // ── Eventbrite embedded checkout ──────────────────────────────
+        window.addEventListener('load', function() {
+            if (window.EBWidgets) {
+                window.EBWidgets.createWidget({
+                    widgetType: 'checkout',
+                    eventId: '1987786507955',
+                    iframeContainerId: 'eventbrite-widget-container-1987786507955',
+                    iframeContainerHeight: 500,
+                    onOrderComplete: showZoomConfirmation
+                });
+            }
+        });
+
+        // ── Show Zoom section if Eventbrite redirected back ───────────
+        // Set your Eventbrite Order Confirmation redirect to:
+        // https://[your-domain]/event.html?registered=true
+        if (new URLSearchParams(window.location.search).get('registered') === 'true') {
+            showZoomConfirmation();
+        }
+
+        // ── Modal close on backdrop click ─────────────────────────────
         document.getElementById('ticket-modal').addEventListener('click', function(e) {
             if (e.target === this) this.classList.remove('open');
         });
