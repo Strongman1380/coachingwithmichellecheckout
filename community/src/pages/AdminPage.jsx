@@ -328,6 +328,16 @@ export default function AdminPage() {
     }
   };
 
+  const handleToggleBan = async (member) => {
+    const newBanned = !member.banned;
+    try {
+      await updateDoc(doc(db, 'users', member.id), { banned: newBanned });
+      toast.success(newBanned ? `${member.displayName} has been banned` : `${member.displayName} has been unbanned`);
+    } catch (error) {
+      toast.error('Failed to update ban status');
+    }
+  };
+
   const handleBroadcast = async (e) => {
     e.preventDefault();
     if (!broadcastTitle.trim() || !broadcastBody.trim()) return;
@@ -424,7 +434,10 @@ export default function AdminPage() {
                     )}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-800 truncate">{m.displayName}</p>
+                    <p className="text-sm font-medium text-gray-800 truncate">
+                      {m.displayName}
+                      {m.banned && <span className="ml-1.5 text-[10px] bg-red-50 text-red-500 px-1.5 py-0.5 rounded-full">Banned</span>}
+                    </p>
                     <p className="text-xs text-gray-400 truncate">{m.email}</p>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
@@ -441,6 +454,17 @@ export default function AdminPage() {
                       )}
                     >
                       {m.role === 'admin' ? 'Admin' : 'Member'}
+                    </button>
+                    <button
+                      onClick={() => handleToggleBan(m)}
+                      className={cn(
+                        'text-xs px-2.5 py-1 rounded-full font-medium transition-colors',
+                        m.banned
+                          ? 'bg-red-100 text-red-600 hover:bg-red-200'
+                          : 'bg-gray-100 text-gray-400 hover:bg-red-50 hover:text-red-500'
+                      )}
+                    >
+                      {m.banned ? 'Unban' : 'Ban'}
                     </button>
                   </div>
                 </div>

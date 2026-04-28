@@ -17,20 +17,34 @@ export function useProvideAuth() {
   const [userDoc, setUserDoc] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Emails that are always admin
+  const ADMIN_EMAILS = [
+    'jocelyn@coachingwithmichelle.org',
+    'bhinrichs1380@gmail.com',
+  ];
+
   // Helper to fetch or create user document
   const fetchOrCreateUserDoc = async (firebaseUser) => {
     try {
       const userRef = doc(db, 'users', firebaseUser.uid);
       const docSnap = await getDoc(userRef);
+      const isAdminEmail = ADMIN_EMAILS.includes(firebaseUser.email?.toLowerCase());
 
       if (docSnap.exists()) {
-        setUserDoc(docSnap.data());
+        const data = docSnap.data();
+        // Auto-promote admin emails if they aren't already admin
+        if (isAdminEmail && data.role !== 'admin') {
+          await setDoc(userRef, { role: 'admin' }, { merge: true });
+          data.role = 'admin';
+        }
+        setUserDoc(data);
       } else {
         const newUserDoc = {
           displayName: firebaseUser.displayName || 'Member',
           email: firebaseUser.email,
           photoURL: firebaseUser.photoURL || null,
-          role: 'member',
+          role: isAdminEmail ? 'admin' : 'member',
+          banned: false,
           notificationsEnabled: false,
           fcmToken: null,
           joinedAt: serverTimestamp()
