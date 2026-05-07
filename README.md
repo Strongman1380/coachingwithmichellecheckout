@@ -23,6 +23,90 @@ A beautiful, production-ready checkout page for coaching programs with multiple 
 └── README.md           # This file
 ```
 
+## Development Setup
+
+### How to Open a Codespace
+
+GitHub Codespaces provides a complete, cloud-based development environment for this project. Here's how to get started:
+
+#### Option 1: From the Repository Page
+1. Navigate to the repository on GitHub: `https://github.com/Strongman1380/coachingwithmichellecheckout`
+2. Click the green **Code** button (near the top right)
+3. Select the **Codespaces** tab in the dropdown
+4. Click **Create codespace on main** (or your desired branch)
+5. Wait for the Codespace to build (usually 30-60 seconds)
+
+#### Option 2: From GitHub Homepage
+1. Go to [github.com/codespaces](https://github.com/codespaces)
+2. Click **New codespace**
+3. Select the repository: `Strongman1380/coachingwithmichellecheckout`
+4. Choose your branch (usually `main`)
+5. Click **Create codespace**
+
+#### Option 3: Direct URL
+1. Visit: `https://github.com/Strongman1380/coachingwithmichellecheckout/codespaces`
+2. Click **New codespace**
+
+#### What You Get with Codespaces
+- 🖥️ Full VS Code editor in your browser
+- 📁 Complete repository access
+- 🌐 Built-in web server for testing
+- 🔧 Pre-configured development environment
+- 💾 Automatic saving and syncing
+
+#### Working in Your Codespace
+
+Once your Codespace opens:
+
+1. **Preview the Site**: 
+   - Right-click on `index.html`
+   - Select **Open with Live Server** (if available)
+   - Or use the **Ports** tab to forward port 5500 or 3000
+
+2. **Edit Files**:
+   - Click any file in the sidebar to edit
+   - Changes save automatically
+
+3. **Test Changes**:
+   - Refresh your preview browser to see updates
+   - Use DevTools (F12) to debug
+
+4. **Commit Changes**:
+   - Use the Source Control panel (Ctrl+Shift+G)
+   - Stage changes, write a commit message, and commit
+   - Push to sync with GitHub
+
+#### Managing Your Codespaces
+- **Stop**: Close the browser tab or click **Codespaces** menu → **Stop Current Codespace**
+- **Reopen**: Go to [github.com/codespaces](https://github.com/codespaces) and click on your existing Codespace
+- **Delete**: From the Codespaces dashboard, click the three dots and select **Delete**
+
+💡 **Tip**: Codespaces automatically stop after 30 minutes of inactivity to save resources.
+
+### Local Development (Alternative)
+
+If you prefer working locally instead of Codespaces:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Strongman1380/coachingwithmichellecheckout.git
+   cd coachingwithmichellecheckout
+   ```
+
+2. Open `index.html` in your browser or use a local server:
+   ```bash
+   # Python 3
+   python -m http.server 8000
+   
+   # Python 2
+   python -m SimpleHTTPServer 8000
+   
+   # Node.js (with http-server)
+   npx http-server
+   ```
+
+3. Visit `http://localhost:8000` in your browser
+
 ## Programs Included
 
 1. **The Confident Reset** - $97
